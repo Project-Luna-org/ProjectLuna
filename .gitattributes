@@ -1,4 +1,4 @@
-* text=auto
+* binary
 
 *.c text eol=crlf
 *.h text eol=crlf
@@ -11,3 +11,4 @@
 *.frag text eol=crlf
 *.vert text eol=crlf
 
+*.gitattributes text eol=crlf
