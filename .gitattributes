@@ -5,8 +5,10 @@
 *.cpp text eol=crlf
 *.hpp text eol=crlf
 
-
+*.ini text eol=crlf
+*.log text eol=crlf
 *.txt text eol=crlf
+*.bat text eol=crlf
 
 *.frag text eol=crlf
 *.vert text eol=crlf
