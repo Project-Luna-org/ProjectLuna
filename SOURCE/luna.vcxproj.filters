@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="core">
+      <UniqueIdentifier>{6262b767-1f69-4bb3-96cd-478f0f7a7f61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utils">
+      <UniqueIdentifier>{6f064461-7e06-45ee-914c-1cabbe05d3fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GLutils">
+      <UniqueIdentifier>{5b37befa-72f5-4075-a5c5-ca8eef928d0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="input">
+      <UniqueIdentifier>{8faa8d4f-c345-4eee-8dc0-53522ccc2e4e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="lunENG\core\main.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="lunENG\utils\setup.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="lunENG\core\tools.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="lunENG\utils\INIparser.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="lunENG\GLutils\drawfont.cpp">
+      <Filter>GLutils</Filter>
+    </ClCompile>
+    <ClCompile Include="lunENG\GLutils\shader.cpp">
+      <Filter>GLutils</Filter>
+    </ClCompile>
+    <ClCompile Include="lunENG\GLutils\GLstuff.cpp">
+      <Filter>GLutils</Filter>
+    </ClCompile>
+    <ClCompile Include="lunENG\utils\SDLgraph.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="lunENG\input\keys.cpp">
+      <Filter>input</Filter>
+    </ClCompile>
+    <ClCompile Include="lunENG\shaderToy.cpp" />
+    <ClCompile Include="lunENG\core\renderer.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="lunENG\core\main.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="lunENG\utils\setup.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="lunENG\core\tools.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="lunENG\utils\INIparser.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="lunENG\GLutils\drawfont.h">
+      <Filter>GLutils</Filter>
+    </ClInclude>
+    <ClInclude Include="lunENG\GLutils\shader.h">
+      <Filter>GLutils</Filter>
+    </ClInclude>
+    <ClInclude Include="lunENG\GLutils\GLstuff.h">
+      <Filter>GLutils</Filter>
+    </ClInclude>
+    <ClInclude Include="lunENG\utils\SDLgraph.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="lunENG\input\keys.h">
+      <Filter>input</Filter>
+    </ClInclude>
+    <ClInclude Include="lunENG\shaderToy.h" />
+    <ClInclude Include="lunENG\core\renderer.h">
+      <Filter>core</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
