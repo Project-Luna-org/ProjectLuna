@@ -1,13 +1,13 @@
-* text
+* text=auto
 
-*.c text 
-*.h text 
-*.cpp text
-*.hpp text
+*.c text eol=crlf
+*.h text eol=crlf
+*.cpp text eol=crlf
+*.hpp text eol=crlf
 
 
-*.txt text
+*.txt text eol=crlf
 
-*.frag text
-*.vert text
+*.frag text eol=crlf
+*.vert text eol=crlf
 
