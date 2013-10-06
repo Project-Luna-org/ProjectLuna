@@ -1,4 +1,4 @@
-* binary
+* text=auto
 
 *.c text eol=crlf
 *.h text eol=crlf

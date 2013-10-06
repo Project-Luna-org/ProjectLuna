@@ -1,0 +1,59 @@
+# Project: luna
+# Makefile created by Dev-C++ 5.4.2
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = lunENG/GLutils/drawfont.o lunENG/GLutils/GLstuff.o lunENG/GLutils/shader.o lunENG/core/main.o lunENG/core/tools.o lunENG/input/keys.o lunENG/utils/INIparser.o lunENG/utils/SDLgraph.o lunENG/utils/setup.o lunENG/shaderToy.o lunENG/core/renderer.o
+LINKOBJ  = lunENG/GLutils/drawfont.o lunENG/GLutils/GLstuff.o lunENG/GLutils/shader.o lunENG/core/main.o lunENG/core/tools.o lunENG/input/keys.o lunENG/utils/INIparser.o lunENG/utils/SDLgraph.o lunENG/utils/setup.o lunENG/shaderToy.o lunENG/core/renderer.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -L"lunENG/Frameworks/mingw/SDL2/Lib" -L"lunENG/Frameworks/mingw/Glew/Lib" -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lOpenGL32 -lGLew32 -lGLu32 
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"lunENG/Frameworks/mingw/Glew/include" -I"lunENG/Frameworks/mingw/SDL2/Include" -I"lunENG/Frameworks/glm"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"lunENG/Frameworks/mingw/Glew/include" -I"lunENG/Frameworks/mingw/SDL2/Include" -I"lunENG/Frameworks/glm"
+BIN      = luna.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+lunENG/GLutils/drawfont.o: lunENG/GLutils/drawfont.cpp
+	$(CPP) -c lunENG/GLutils/drawfont.cpp -o lunENG/GLutils/drawfont.o $(CXXFLAGS)
+
+lunENG/GLutils/GLstuff.o: lunENG/GLutils/GLstuff.cpp
+	$(CPP) -c lunENG/GLutils/GLstuff.cpp -o lunENG/GLutils/GLstuff.o $(CXXFLAGS)
+
+lunENG/GLutils/shader.o: lunENG/GLutils/shader.cpp
+	$(CPP) -c lunENG/GLutils/shader.cpp -o lunENG/GLutils/shader.o $(CXXFLAGS)
+
+lunENG/core/main.o: lunENG/core/main.cpp
+	$(CPP) -c lunENG/core/main.cpp -o lunENG/core/main.o $(CXXFLAGS)
+
+lunENG/core/tools.o: lunENG/core/tools.cpp
+	$(CPP) -c lunENG/core/tools.cpp -o lunENG/core/tools.o $(CXXFLAGS)
+
+lunENG/input/keys.o: lunENG/input/keys.cpp
+	$(CPP) -c lunENG/input/keys.cpp -o lunENG/input/keys.o $(CXXFLAGS)
+
+lunENG/utils/INIparser.o: lunENG/utils/INIparser.cpp
+	$(CPP) -c lunENG/utils/INIparser.cpp -o lunENG/utils/INIparser.o $(CXXFLAGS)
+
+lunENG/utils/SDLgraph.o: lunENG/utils/SDLgraph.cpp
+	$(CPP) -c lunENG/utils/SDLgraph.cpp -o lunENG/utils/SDLgraph.o $(CXXFLAGS)
+
+lunENG/utils/setup.o: lunENG/utils/setup.cpp
+	$(CPP) -c lunENG/utils/setup.cpp -o lunENG/utils/setup.o $(CXXFLAGS)
+
+lunENG/shaderToy.o: lunENG/shaderToy.cpp
+	$(CPP) -c lunENG/shaderToy.cpp -o lunENG/shaderToy.o $(CXXFLAGS)
+
+lunENG/core/renderer.o: lunENG/core/renderer.cpp
+	$(CPP) -c lunENG/core/renderer.cpp -o lunENG/core/renderer.o $(CXXFLAGS)
