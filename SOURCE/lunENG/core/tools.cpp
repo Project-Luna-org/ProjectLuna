@@ -1,4 +1,12 @@
-#include <Windows.h>
+#include "../osSetup.h"
+
+#ifdef OS_WIN
+ #include <Windows.h>
+#endif
+#ifdef OS_OSX
+ #include <CoreFoundation/CoreFoundation.h>
+#endif
+
 #include <string>
 #include <sstream>
 #include <stdlib.h>
@@ -146,7 +154,7 @@ char* stringchar(string s)
 }
 
 
-
+#ifdef OS_WIN
 wstring s2ws(const string& s)
 {
     int len;
@@ -158,6 +166,7 @@ wstring s2ws(const string& s)
     delete[] buf;
     return r;
 }
+#endif
 
 
 
@@ -192,7 +201,7 @@ void log(int num)
 string getPathFromFullFileName(string filename)
 {
 	string s=filename;
-	int mycount = s.length();
+	unsigned long mycount = s.length();
 	char ch=0;
 
 	while (true)
@@ -230,34 +239,80 @@ void error(string thetext)
 {
 	log("[ERROR] "+thetext);
 
+#ifdef OS_WIN
 	wstring stemp = s2ws(thetext);
 	LPCWSTR result = stemp.c_str();
-
 	MessageBoxW(NULL,(LPCWSTR) result, L"Error", MB_OK);	
-
+#endif
+    
+#ifdef OS_OSX
+    CFStringRef cfDestination = ::CFStringCreateWithCString(kCFAllocatorDefault, thetext.c_str(),kCFStringEncodingMacRoman);
+    
+    SInt32 nRes = 0;
+    CFUserNotificationRef pDlg = NULL;
+    const void* keys[] = { kCFUserNotificationAlertHeaderKey,
+        kCFUserNotificationAlertMessageKey };
+    const void* vals[] = {
+        CFSTR("ERROR"),
+        cfDestination
+    };
+    
+    CFDictionaryRef dict = CFDictionaryCreate(0, keys, vals,
+                                              sizeof(keys)/sizeof(*keys),
+                                              &kCFTypeDictionaryKeyCallBacks,
+                                              &kCFTypeDictionaryValueCallBacks);
+    
+    pDlg = CFUserNotificationCreate(kCFAllocatorDefault, 0,
+                                    kCFUserNotificationPlainAlertLevel,
+                                    &nRes, dict);
+    CFRelease(cfDestination);
+    CFRelease(pDlg);
+    CFRelease(dict);
+#endif
+    
 	exit(-1);
 }
+
+
+
 
 void makeMessage(string thetext)
 {
 	log("[MESSAGE] "+thetext);
-
+#ifdef OS_WIN
 	wstring stemp = s2ws(thetext);
 	LPCWSTR result = stemp.c_str();
-
 	MessageBoxW(NULL,(LPCWSTR) result, L"Message", MB_OK);	
+#endif
+    
+#ifdef OS_OSX
+    CFStringRef cfDestination = ::CFStringCreateWithCString(kCFAllocatorDefault, thetext.c_str(),kCFStringEncodingMacRoman);
+    
+    SInt32 nRes = 0;
+    CFUserNotificationRef pDlg = NULL;
+    const void* keys[] = { kCFUserNotificationAlertHeaderKey,
+        kCFUserNotificationAlertMessageKey };
+    const void* vals[] = {
+        CFSTR("Message Box"),
+        cfDestination
+    };
+    
+    CFDictionaryRef dict = CFDictionaryCreate(0, keys, vals,
+                                              sizeof(keys)/sizeof(*keys),
+                                              &kCFTypeDictionaryKeyCallBacks,
+                                              &kCFTypeDictionaryValueCallBacks);
+    
+    pDlg = CFUserNotificationCreate(kCFAllocatorDefault, 0,
+                                    kCFUserNotificationPlainAlertLevel,
+                                    &nRes, dict);
+    CFRelease(cfDestination);
+    CFRelease(pDlg);
+    CFRelease(dict);
+    
+#endif
+    
+    
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -276,6 +331,21 @@ void sortUint(unsigned int* &arr)
 	  }
 	}
 }
+
+
+
+
+unsigned long strlength(string s)
+{
+#ifdef OS_OSX
+    if (s.length()==0) return 0; else return s.length()-1;
+#endif
+#ifdef OS_WIN
+    return s.length();
+#endif
+}
+
+
 
 
 

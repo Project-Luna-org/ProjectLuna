@@ -1,9 +1,22 @@
 #define NO_SDL_GLEXT
 
+#include "osSetup.h"
+
+#ifdef OS_WIN
 #include <Windows.h>
+#endif
+
 #include <glew.h>
-#include <gl/GL.h>
+
+#ifdef OS_OSX
+#include <OpenGL/OpenGL.h>
+#endif
+#ifdef OS_WIN
+#inlcude <gl/GL.h>
 #include <gl/GLU.h>
+#endif
+
+
 #include <string>
 
 #include <SDL.h>
@@ -15,9 +28,9 @@
 
 #include "core/tools.h"
 #include "core/main.h"
-#include "utils\setup.h"
+#include "utils/setup.h"
 #include "GLutils/GLstuff.h"
-#include "core\renderer.h"
+#include "core/renderer.h"
 
 #include "shaderToy.h"
 

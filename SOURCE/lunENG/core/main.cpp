@@ -1,9 +1,18 @@
 #define NO_SDL_GLEXT
 
-#include <Windows.h>
+#include "../osSetup.h"
+#ifdef OS_WIN
+ #include <Windows.h>
+#endif
+
 #include <glew.h>
-#include <gl/GL.h>
-#include <gl/GLU.h>
+#ifdef OS_OSX
+ #include <OpenGL/OpenGL.h>
+#endif
+#ifdef OS_WIN
+ #inlcude <gl/GL.h>
+ #include <gl/GLU.h>
+#endif
 #include <string>
 #include <stdlib.h>
 #include <time.h>
@@ -42,13 +51,16 @@ int main(int argc, char** argv)
 {
 
 	CreateLogFile();
+    
+    
+    makeMessage("test");
 	
 	srand((unsigned int) time(NULL));
 
 	GetEngineStartupConfig();
 	
 	
-    if ( SDL_Init(SDL_INIT_VIDEO) != 0 ) error("Unable to initialize SDL2: " + (string) SDL_GetError());
+    if ( SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER) != 0 ) error("Unable to initialize SDL2: " + (string) SDL_GetError());
 
 
 
@@ -127,7 +139,7 @@ int main(int argc, char** argv)
 	glDepthFunc(GL_LEQUAL);
 		
 
-	mat4 ProjMatrix = perspective(45.0f, (float) screenwidth / screenheight, 0.1f, 1000.0f);
+	// mat4 ProjMatrix = perspective(45.0f, (float) screenwidth / screenheight, 0.1f, 1000.0f);
 
 
 	//////////////////////////////////////////////////////////////////////////////////////
@@ -149,7 +161,7 @@ int main(int argc, char** argv)
 
 	bool quit=false;
 	SDL_Event event;
-	progEnterTime=GetTickCount();
+	progEnterTime=SDL_GetTicks();
 	while (!quit)
 	{
 
@@ -195,7 +207,7 @@ int main(int argc, char** argv)
 			}
 		}
 		
-		curTimeStamp=GetTickCount()-progEnterTime;
+		curTimeStamp=SDL_GetTicks()-progEnterTime;
 
 		// Update
 
@@ -222,7 +234,7 @@ int main(int argc, char** argv)
 	//////////////////////////////////////////////////////////////////////////////////////		
 
 		dwFrames++;
-		dwCurrentTime = GetTickCount(); 
+		dwCurrentTime = SDL_GetTicks();
 		dwElapsedTime = dwCurrentTime - dwLastUpdateTime;
 		
 		if(dwElapsedTime >= 1000)

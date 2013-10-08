@@ -1,9 +1,22 @@
 #define NO_SDL_GLEXT
 
+#include "../osSetup.h"
+
+#ifdef OS_WIN
 #include <Windows.h>
+#endif
+
 #include <glew.h>
-#include <gl/GL.h>
+
+#ifdef OS_OSX
+#include <OpenGL/OpenGL.h>
+#endif
+#ifdef OS_WIN
+#inlcude <gl/GL.h>
 #include <gl/GLU.h>
+#endif
+
+
 #include <string>
 
 
@@ -42,6 +55,11 @@ int drawfont::nextpoweroftwo(float x)
 
 void drawfont::glTextOut(int x, int y, string txt, Uint32 color)
 {
+    
+    string tempstr = txt;
+    
+    if (strlength(tempstr)==0) return;
+    
 
 	if (!curfont) error("glTextOut: font is not initialized!");
 
@@ -62,8 +80,9 @@ void drawfont::glTextOut(int x, int y, string txt, Uint32 color)
 
 	SDL_Surface *resulting_text;
     
-    resulting_text = TTF_RenderText_Blended(curfont, txt.data(), tmpfontcolor);
-	if (!resulting_text) error("glTextOut: TTF_RenderText_Blended fails: "+ (string) SDL_GetError());
+    resulting_text = TTF_RenderText_Blended(curfont,tempstr.c_str(), tmpfontcolor);
+	
+    if (!resulting_text) error("glTextOut: TTF_RenderText_Blended fails: "+ (string) SDL_GetError());
 
 
 	int w = resulting_text->w;

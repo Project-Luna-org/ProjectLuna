@@ -1,5 +1,4 @@
 
-
 #include <string>
 #include <stdlib.h>
 #include <fstream>
@@ -13,12 +12,13 @@ using namespace std;
 
 string INIparser::LineType(string s)
 {
+    
 	string ss="";
 	char ch=0x00;
 	unsigned int i=0;
 
 
-	while (i<s.length())
+	while (i<strlength(s))
 	{
 		ch=s[i];
 
@@ -29,19 +29,20 @@ string INIparser::LineType(string s)
 
 	i=0;
 	bool emptyline=true;
-	while (i<s.length())
+	while (i<strlength(s))
 	{
 		ch=s[i];
 
-		if (ch!=0x0D || ch!=0x0A || ch!=0x00) emptyline=false;
+		if (ch!=0x0D || ch!=0x0A || ch!=0x00)  emptyline=false; 
 
 		i++;
 	}
 
+    
 	if (emptyline) return "";
 
 	i=0;
-	while (i<s.length())
+	while (i<strlength(s))
 	{
 		ch=s[i];
 
@@ -51,7 +52,7 @@ string INIparser::LineType(string s)
 	}
 	
 	i=0;
-	while (i<s.length())
+	while (i<strlength(s))
 	{
 		ch=s[i];
 
@@ -60,6 +61,8 @@ string INIparser::LineType(string s)
 		i++;
 	}
 	
+ 
+
 	return "unknown";
 }
 
@@ -71,7 +74,7 @@ string INIparser::returnSection(string s)
 	unsigned int i=0;
 	bool start=false;
 
-	while (i<s.length())
+	while (i<strlength(s))
 	{
 		ch=s[i];
 
@@ -91,7 +94,7 @@ INIparser::Entry INIparser::returnEntry(string s)
 
 	unsigned int i=0;
 	char ch=0x00;
-	while (i<s.length())
+	while (i<strlength(s))
 	{
 		ch=s[i];
 
@@ -102,7 +105,7 @@ INIparser::Entry INIparser::returnEntry(string s)
 
 	string ss="";
 
-	while (i<s.length())
+	while (i<strlength(s))
 	{
 		ch=s[i];
 
@@ -125,7 +128,7 @@ INIparser::Entry INIparser::returnEntry(string s)
 	i++;
 	ss="";
 
-	while (i<s.length())
+	while (i<strlength(s))
 	{
 		ch=s[i];
 
@@ -135,7 +138,7 @@ INIparser::Entry INIparser::returnEntry(string s)
 	}
 
 	
-	while (i<s.length())
+	while (i<strlength(s))
 	{
 		ch=s[i];
 
@@ -323,6 +326,7 @@ string INIparser::getKeyValue(string section, string keyname)
 	 }
 
 	 if (theEntry==-1) error("unknown keyname:"+keyname);
+    
 
 	 return Sections[theSection].Entries[theEntry].value;
 }

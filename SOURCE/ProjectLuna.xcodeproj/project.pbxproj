@@ -1,0 +1,441 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E05BDB581804836600953D84 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E05BDB571804836600953D84 /* Cocoa.framework */; };
+		E05BDB621804836600953D84 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E05BDB601804836600953D84 /* InfoPlist.strings */; };
+		E05BDB681804836600953D84 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E05BDB661804836600953D84 /* Credits.rtf */; };
+		E0A4C22C1804860E0093A04E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0A4C2131804860E0093A04E /* main.cpp */; };
+		E0A4C22D1804860E0093A04E /* renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0A4C2151804860E0093A04E /* renderer.cpp */; };
+		E0A4C22E1804860E0093A04E /* tools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0A4C2171804860E0093A04E /* tools.cpp */; };
+		E0A4C22F1804860E0093A04E /* drawfont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0A4C21A1804860E0093A04E /* drawfont.cpp */; };
+		E0A4C2301804860E0093A04E /* GLstuff.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0A4C21C1804860E0093A04E /* GLstuff.cpp */; };
+		E0A4C2311804860E0093A04E /* shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0A4C21E1804860E0093A04E /* shader.cpp */; };
+		E0A4C2321804860E0093A04E /* keys.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0A4C2211804860E0093A04E /* keys.cpp */; };
+		E0A4C2331804860E0093A04E /* INIparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0A4C2241804860E0093A04E /* INIparser.cpp */; };
+		E0A4C2341804860E0093A04E /* SDLgraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0A4C2261804860E0093A04E /* SDLgraph.cpp */; };
+		E0A4C2351804860E0093A04E /* setup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0A4C2281804860E0093A04E /* setup.cpp */; };
+		E0A4C2361804860E0093A04E /* shaderToy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0A4C22A1804860E0093A04E /* shaderToy.cpp */; };
+		E0A4C23918048E930093A04E /* libGLEW.1.10.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A4C23818048E930093A04E /* libGLEW.1.10.0.dylib */; };
+		E0A4C23B18048EB90093A04E /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A4C23A18048EB90093A04E /* OpenGL.framework */; };
+		E0A4C23D180492EC0093A04E /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A4C23C180492EC0093A04E /* SDL2.framework */; };
+		E0A4C23F180492F90093A04E /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A4C23E180492F90093A04E /* SDL2_image.framework */; };
+		E0A4C241180493060093A04E /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A4C240180493060093A04E /* SDL2_ttf.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E05BDB531804836600953D84 /* ProjectLuna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectLuna.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E05BDB571804836600953D84 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		E05BDB5A1804836600953D84 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		E05BDB5B1804836600953D84 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E05BDB5C1804836600953D84 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E05BDB5F1804836600953D84 /* ProjectLuna-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ProjectLuna-Info.plist"; sourceTree = "<group>"; };
+		E05BDB611804836600953D84 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E05BDB651804836600953D84 /* ProjectLuna-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ProjectLuna-Prefix.pch"; sourceTree = "<group>"; };
+		E05BDB671804836600953D84 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		E0A4C1F2180484B80093A04E /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = lunENG/Frameworks/osx/SDL2/SDL2.framework; sourceTree = "<group>"; };
+		E0A4C1F4180484C70093A04E /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = lunENG/Frameworks/osx/SDL2/SDL2_image.framework; sourceTree = "<group>"; };
+		E0A4C210180485090093A04E /* SDL2_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_ttf.framework; path = lunENG/Frameworks/osx/SDL2/SDL2_ttf.framework; sourceTree = "<group>"; };
+		E0A4C2131804860E0093A04E /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		E0A4C2141804860E0093A04E /* main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
+		E0A4C2151804860E0093A04E /* renderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = renderer.cpp; sourceTree = "<group>"; };
+		E0A4C2161804860E0093A04E /* renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = renderer.h; sourceTree = "<group>"; };
+		E0A4C2171804860E0093A04E /* tools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tools.cpp; sourceTree = "<group>"; };
+		E0A4C2181804860E0093A04E /* tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tools.h; sourceTree = "<group>"; };
+		E0A4C21A1804860E0093A04E /* drawfont.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = drawfont.cpp; sourceTree = "<group>"; };
+		E0A4C21B1804860E0093A04E /* drawfont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = drawfont.h; sourceTree = "<group>"; };
+		E0A4C21C1804860E0093A04E /* GLstuff.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLstuff.cpp; sourceTree = "<group>"; };
+		E0A4C21D1804860E0093A04E /* GLstuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLstuff.h; sourceTree = "<group>"; };
+		E0A4C21E1804860E0093A04E /* shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = shader.cpp; sourceTree = "<group>"; };
+		E0A4C21F1804860E0093A04E /* shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shader.h; sourceTree = "<group>"; };
+		E0A4C2211804860E0093A04E /* keys.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = keys.cpp; sourceTree = "<group>"; };
+		E0A4C2221804860E0093A04E /* keys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = keys.h; sourceTree = "<group>"; };
+		E0A4C2241804860E0093A04E /* INIparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = INIparser.cpp; sourceTree = "<group>"; };
+		E0A4C2251804860E0093A04E /* INIparser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INIparser.h; sourceTree = "<group>"; };
+		E0A4C2261804860E0093A04E /* SDLgraph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SDLgraph.cpp; sourceTree = "<group>"; };
+		E0A4C2271804860E0093A04E /* SDLgraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDLgraph.h; sourceTree = "<group>"; };
+		E0A4C2281804860E0093A04E /* setup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = setup.cpp; sourceTree = "<group>"; };
+		E0A4C2291804860E0093A04E /* setup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = setup.h; sourceTree = "<group>"; };
+		E0A4C22A1804860E0093A04E /* shaderToy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = shaderToy.cpp; path = lunENG/shaderToy.cpp; sourceTree = SOURCE_ROOT; };
+		E0A4C22B1804860E0093A04E /* shaderToy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = shaderToy.h; path = lunENG/shaderToy.h; sourceTree = SOURCE_ROOT; };
+		E0A4C237180486560093A04E /* osSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osSetup.h; path = lunENG/osSetup.h; sourceTree = SOURCE_ROOT; };
+		E0A4C23818048E930093A04E /* libGLEW.1.10.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.1.10.0.dylib; path = lunENG/Frameworks/osx/GLew/Lib/libGLEW.1.10.0.dylib; sourceTree = "<group>"; };
+		E0A4C23A18048EB90093A04E /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = ../../../../../System/Library/Frameworks/OpenGL.framework; sourceTree = "<group>"; };
+		E0A4C23C180492EC0093A04E /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
+		E0A4C23E180492F90093A04E /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
+		E0A4C240180493060093A04E /* SDL2_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_ttf.framework; path = ../../../../../Library/Frameworks/SDL2_ttf.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E05BDB501804836600953D84 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0A4C241180493060093A04E /* SDL2_ttf.framework in Frameworks */,
+				E0A4C23F180492F90093A04E /* SDL2_image.framework in Frameworks */,
+				E0A4C23D180492EC0093A04E /* SDL2.framework in Frameworks */,
+				E0A4C23B18048EB90093A04E /* OpenGL.framework in Frameworks */,
+				E0A4C23918048E930093A04E /* libGLEW.1.10.0.dylib in Frameworks */,
+				E05BDB581804836600953D84 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E05BDB481804836600953D84 = {
+			isa = PBXGroup;
+			children = (
+				E0A4C240180493060093A04E /* SDL2_ttf.framework */,
+				E0A4C23E180492F90093A04E /* SDL2_image.framework */,
+				E0A4C23C180492EC0093A04E /* SDL2.framework */,
+				E0A4C23A18048EB90093A04E /* OpenGL.framework */,
+				E0A4C23818048E930093A04E /* libGLEW.1.10.0.dylib */,
+				E0A4C210180485090093A04E /* SDL2_ttf.framework */,
+				E0A4C1F4180484C70093A04E /* SDL2_image.framework */,
+				E0A4C1F2180484B80093A04E /* SDL2.framework */,
+				E05BDB5D1804836600953D84 /* ProjectLuna */,
+				E05BDB561804836600953D84 /* Frameworks */,
+				E05BDB541804836600953D84 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E05BDB541804836600953D84 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E05BDB531804836600953D84 /* ProjectLuna.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E05BDB561804836600953D84 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E05BDB571804836600953D84 /* Cocoa.framework */,
+				E05BDB591804836600953D84 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E05BDB591804836600953D84 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E05BDB5A1804836600953D84 /* AppKit.framework */,
+				E05BDB5B1804836600953D84 /* CoreData.framework */,
+				E05BDB5C1804836600953D84 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		E05BDB5D1804836600953D84 /* ProjectLuna */ = {
+			isa = PBXGroup;
+			children = (
+				E0A4C237180486560093A04E /* osSetup.h */,
+				E0A4C2121804860E0093A04E /* core */,
+				E0A4C2191804860E0093A04E /* GLutils */,
+				E0A4C2201804860E0093A04E /* input */,
+				E0A4C2231804860E0093A04E /* utils */,
+				E0A4C22A1804860E0093A04E /* shaderToy.cpp */,
+				E0A4C22B1804860E0093A04E /* shaderToy.h */,
+				E05BDB5E1804836600953D84 /* Supporting Files */,
+			);
+			path = ProjectLuna;
+			sourceTree = "<group>";
+		};
+		E05BDB5E1804836600953D84 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E05BDB5F1804836600953D84 /* ProjectLuna-Info.plist */,
+				E05BDB601804836600953D84 /* InfoPlist.strings */,
+				E05BDB651804836600953D84 /* ProjectLuna-Prefix.pch */,
+				E05BDB661804836600953D84 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E0A4C2121804860E0093A04E /* core */ = {
+			isa = PBXGroup;
+			children = (
+				E0A4C2131804860E0093A04E /* main.cpp */,
+				E0A4C2141804860E0093A04E /* main.h */,
+				E0A4C2151804860E0093A04E /* renderer.cpp */,
+				E0A4C2161804860E0093A04E /* renderer.h */,
+				E0A4C2171804860E0093A04E /* tools.cpp */,
+				E0A4C2181804860E0093A04E /* tools.h */,
+			);
+			name = core;
+			path = lunENG/core;
+			sourceTree = SOURCE_ROOT;
+		};
+		E0A4C2191804860E0093A04E /* GLutils */ = {
+			isa = PBXGroup;
+			children = (
+				E0A4C21A1804860E0093A04E /* drawfont.cpp */,
+				E0A4C21B1804860E0093A04E /* drawfont.h */,
+				E0A4C21C1804860E0093A04E /* GLstuff.cpp */,
+				E0A4C21D1804860E0093A04E /* GLstuff.h */,
+				E0A4C21E1804860E0093A04E /* shader.cpp */,
+				E0A4C21F1804860E0093A04E /* shader.h */,
+			);
+			name = GLutils;
+			path = lunENG/GLutils;
+			sourceTree = SOURCE_ROOT;
+		};
+		E0A4C2201804860E0093A04E /* input */ = {
+			isa = PBXGroup;
+			children = (
+				E0A4C2211804860E0093A04E /* keys.cpp */,
+				E0A4C2221804860E0093A04E /* keys.h */,
+			);
+			name = input;
+			path = lunENG/input;
+			sourceTree = SOURCE_ROOT;
+		};
+		E0A4C2231804860E0093A04E /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				E0A4C2241804860E0093A04E /* INIparser.cpp */,
+				E0A4C2251804860E0093A04E /* INIparser.h */,
+				E0A4C2261804860E0093A04E /* SDLgraph.cpp */,
+				E0A4C2271804860E0093A04E /* SDLgraph.h */,
+				E0A4C2281804860E0093A04E /* setup.cpp */,
+				E0A4C2291804860E0093A04E /* setup.h */,
+			);
+			name = utils;
+			path = lunENG/utils;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E05BDB521804836600953D84 /* ProjectLuna */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E05BDB711804836700953D84 /* Build configuration list for PBXNativeTarget "ProjectLuna" */;
+			buildPhases = (
+				E05BDB4F1804836600953D84 /* Sources */,
+				E05BDB501804836600953D84 /* Frameworks */,
+				E05BDB511804836600953D84 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ProjectLuna;
+			productName = ProjectLuna;
+			productReference = E05BDB531804836600953D84 /* ProjectLuna.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E05BDB4A1804836600953D84 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Sista Vip Corporation";
+			};
+			buildConfigurationList = E05BDB4D1804836600953D84 /* Build configuration list for PBXProject "ProjectLuna" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E05BDB481804836600953D84;
+			productRefGroup = E05BDB541804836600953D84 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E05BDB521804836600953D84 /* ProjectLuna */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E05BDB511804836600953D84 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E05BDB621804836600953D84 /* InfoPlist.strings in Resources */,
+				E05BDB681804836600953D84 /* Credits.rtf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E05BDB4F1804836600953D84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0A4C22C1804860E0093A04E /* main.cpp in Sources */,
+				E0A4C22D1804860E0093A04E /* renderer.cpp in Sources */,
+				E0A4C22E1804860E0093A04E /* tools.cpp in Sources */,
+				E0A4C22F1804860E0093A04E /* drawfont.cpp in Sources */,
+				E0A4C2301804860E0093A04E /* GLstuff.cpp in Sources */,
+				E0A4C2311804860E0093A04E /* shader.cpp in Sources */,
+				E0A4C2321804860E0093A04E /* keys.cpp in Sources */,
+				E0A4C2331804860E0093A04E /* INIparser.cpp in Sources */,
+				E0A4C2341804860E0093A04E /* SDLgraph.cpp in Sources */,
+				E0A4C2351804860E0093A04E /* setup.cpp in Sources */,
+				E0A4C2361804860E0093A04E /* shaderToy.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E05BDB601804836600953D84 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E05BDB611804836600953D84 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E05BDB661804836600953D84 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E05BDB671804836600953D84 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E05BDB6F1804836600953D84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = "";
+			};
+			name = Debug;
+		};
+		E05BDB701804836600953D84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = "";
+			};
+			name = Release;
+		};
+		E05BDB721804836700953D84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/lunENG/Frameworks/osx/SDL2\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ProjectLuna/ProjectLuna-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					lunENG/Frameworks/osx/SDL2/SDL2.framework/Headers,
+					lunENG/Frameworks/osx/SDL2/SDL2_image.framework/Headers,
+					lunENG/Frameworks/osx/SDL2/SDL2_ttf.framework/Headers,
+					lunENG/Frameworks/osx/GLew/Include,
+					lunENG/Frameworks/glm,
+				);
+				INFOPLIST_FILE = "ProjectLuna/ProjectLuna-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					lunENG/Frameworks/osx/GLew/Lib,
+					"\"$(SRCROOT)/lunENG/Frameworks/osx/GLew/Lib\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E05BDB731804836700953D84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/lunENG/Frameworks/osx/SDL2\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ProjectLuna/ProjectLuna-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					lunENG/Frameworks/osx/SDL2/SDL2.framework/Headers,
+					lunENG/Frameworks/osx/SDL2/SDL2_image.framework/Headers,
+					lunENG/Frameworks/osx/SDL2/SDL2_ttf.framework/Headers,
+					lunENG/Frameworks/osx/GLew/Include,
+					lunENG/Frameworks/glm,
+				);
+				INFOPLIST_FILE = "ProjectLuna/ProjectLuna-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					lunENG/Frameworks/osx/GLew/Lib,
+					"\"$(SRCROOT)/lunENG/Frameworks/osx/GLew/Lib\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E05BDB4D1804836600953D84 /* Build configuration list for PBXProject "ProjectLuna" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E05BDB6F1804836600953D84 /* Debug */,
+				E05BDB701804836600953D84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E05BDB711804836700953D84 /* Build configuration list for PBXNativeTarget "ProjectLuna" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E05BDB721804836700953D84 /* Debug */,
+				E05BDB731804836700953D84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E05BDB4A1804836600953D84 /* Project object */;
+}

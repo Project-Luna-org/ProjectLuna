@@ -39,11 +39,14 @@ void log(int num);
 float myrandom();
 int randomRange( int low, int high );
 
-
+#ifdef OS_WIN
 wstring s2ws(const string& s);
+#endif
 
 void error(string thetext);
 
 void makeMessage(string thetext);
 
 void sortUint(unsigned int* &arr);
+
+unsigned long strlength(string s);
