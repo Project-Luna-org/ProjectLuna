@@ -51,9 +51,7 @@ int main(int argc, char** argv)
 {
 
 	CreateLogFile();
-    
-    
-    makeMessage("test");
+ 
 	
 	srand((unsigned int) time(NULL));
 
@@ -62,6 +60,7 @@ int main(int argc, char** argv)
 	
     if ( SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER) != 0 ) error("Unable to initialize SDL2: " + (string) SDL_GetError());
 
+ 
 
 
 	if (rendererver == 1)
@@ -84,7 +83,7 @@ int main(int argc, char** argv)
 	//SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_COMPATIBILITY);
 
 
-	
+
 
     SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 	SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
@@ -100,24 +99,33 @@ int main(int argc, char** argv)
 
 	
     SDL_GLContext SDLopenGLcontext = SDL_GL_CreateContext(SDLwindow);
-	
 
+    if(!SDLopenGLcontext)
+    {
+        const char* errorstr = SDL_GetError();
+        error(errorstr);
+    }
+        
+
+    
 	glewExperimental = GL_TRUE;
 	GLenum glewError = glewInit(); 
 	if( glewError != GLEW_OK ) error("Unable to init GLew: "+constpcharstr(glewGetErrorString(glewError)));
+    
 	glGetError();
 
-
-	const GLubyte* glRenderer = glGetString (GL_RENDERER); 
+    
+    
+	const GLubyte* glRenderer = glGetString(GL_RENDERER);
 	const GLubyte *glVersion= glGetString(GL_VERSION);
 	log("OpenGL renderer "+pcharstr((unsigned char*)glRenderer));
-	log("OpenGL version "+pcharstr((unsigned char*)glVersion));
+	log("OpenGL version "+pcharstr((unsigned char*)glVersion));   
+    
 
 		
     GLint major,minor;
     glGetIntegerv(GL_MAJOR_VERSION, &major);
     glGetIntegerv(GL_MINOR_VERSION, &minor);
-
 	//if (major<3) error("OpenGL version 3.3 not supported");
 	//if (minor<3) error("OpenGL version 3.3 not supported");
 

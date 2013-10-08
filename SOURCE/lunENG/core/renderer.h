@@ -5,14 +5,14 @@ class renderer
 {
 public:
 
-	renderer(unsigned int drawingMode,unsigned int PrimitiveType,unsigned int numVertex);
+	renderer(unsigned int drawingMode,unsigned int PrimitiveType,unsigned int numVertex, unsigned int shaderProc);
    ~renderer();
 
 	void LoadPoints(void* data, unsigned int numPoints);
 	void LoadTextCoords(void* data, unsigned int numUVs);
 
 
-	void Render(unsigned int shaderProc);
+	void Render();
 
 private:
 			
@@ -29,4 +29,11 @@ private:
 	unsigned int PrimitiveType;
 	unsigned int numVertex;
 
+    unsigned int shaderProc;
+    
+    int loc_inVertex;
+    int loc_inTextCoords;
+    
+    unsigned int VAO;
+    
 };

@@ -123,8 +123,20 @@ shader::shader(string filenameVertexShader, string filenameFragmentShader)
 		glAttachShader(prog,vsID);
 		glAttachShader(prog,fsID);
 
-		
 		glLinkProgram(prog);
+    
+    
+    int IsLinked;
+    glGetProgramiv(prog, GL_LINK_STATUS, (int *)&IsLinked);
+    if(IsLinked == GL_FALSE)
+    {
+       
+        char errorbuff[256];
+        
+        glGetProgramInfoLog(prog,256,NULL,errorbuff);
+        
+        error("ERROR: "+filenameFragmentShader+"\n"+filenameVertexShader+"\n"+"PROGRAM\n"+errorbuff);
+    }
 
 	
 }

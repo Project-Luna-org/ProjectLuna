@@ -181,7 +181,7 @@ void drawfont::glTextOut(int x, int y, string txt, Uint32 color)
 
 	
 
-	renderer* fontrenderer =  new renderer(GL_STREAM_DRAW,GL_TRIANGLE_FAN,4); 
+	renderer* fontrenderer =  new renderer(GL_STREAM_DRAW,GL_TRIANGLE_FAN,4,FontShader->prog);
 
 	fontrenderer->LoadPoints(v,12);
 	fontrenderer->LoadTextCoords(t,8);
@@ -211,7 +211,7 @@ void drawfont::glTextOut(int x, int y, string txt, Uint32 color)
 
 
 
-	fontrenderer->Render(FontShader->prog);
+	fontrenderer->Render();
 
 
 
@@ -246,9 +246,13 @@ drawfont::drawfont(string fontfilename,int size)
 		
 	if (!(curfont = TTF_OpenFont(stringchar(fontfilename), size))) error("TTF_OpenFont "+fontfilename+" fails: " + (string) SDL_GetError());
 
-	FontShader = new shader(DATAfolder+"shader/font.vert", DATAfolder+"shader/font.frag");
-
-
+    if (rendererver == 1)
+	 FontShader = new shader(DATAfolder+"shader/2.1/font.vert", DATAfolder+"shader/2.1/font.frag");
+    if (rendererver == 2)
+     FontShader = new shader(DATAfolder+"shader/3.2/font.vert", DATAfolder+"shader/3.2/font.frag");
+    if (rendererver == 3)
+     FontShader = new shader(DATAfolder+"shader/4.3/font.vert", DATAfolder+"shader/4.3/font.frag");
+    
 }
 
 drawfont::~drawfont()

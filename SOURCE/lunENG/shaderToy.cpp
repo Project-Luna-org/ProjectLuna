@@ -50,7 +50,13 @@ shader* shaderToyshader = NULL;
 void initQuad()
 {
 
-	shaderToyshader = new shader(DATAfolder+"shader/shaderToy.vert",DATAfolder+"shader/flame.frag");
+    if (rendererver == 1)
+        shaderToyshader = new shader(DATAfolder+"shader/2.1/shaderToy.vert",DATAfolder+"shader/2.1/flame.frag");
+    if (rendererver == 2)
+        shaderToyshader = new shader(DATAfolder+"shader/3.2/shaderToy.vert",DATAfolder+"shader/3.2/flame.frag");
+    if (rendererver == 3)
+        shaderToyshader = new shader(DATAfolder+"shader/4.3/shaderToy.vert",DATAfolder+"shader/4.3/flame.frag");
+    
 
 		int x=0;
 		int y=0;
@@ -68,7 +74,7 @@ void initQuad()
 
 		
 
-	shaderToyrenderer = new renderer(GL_STATIC_DRAW,GL_TRIANGLE_FAN,4);
+	shaderToyrenderer = new renderer(GL_STATIC_DRAW,GL_TRIANGLE_FAN,4,shaderToyshader->prog);
 	shaderToyrenderer->LoadPoints(v,12);
 
 
@@ -135,7 +141,7 @@ void drawQuad()
 	/// glBindVertexArray (vao);
 
 
-		 shaderToyrenderer->Render(shaderToyshader->prog);
+		 shaderToyrenderer->Render();
 
 
 
