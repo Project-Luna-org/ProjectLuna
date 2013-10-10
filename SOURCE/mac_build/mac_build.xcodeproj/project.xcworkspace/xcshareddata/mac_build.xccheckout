@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>DF1F3E97-72E9-4AE0-9D1B-84EB1809813B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>mac_build</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>0FFD0FCE-420D-4D3E-AD86-6A813F1D5CCA</key>
+		<string>https://github.com/Project-Luna-org/ProjectLuna.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SOURCE/mac_build/mac_build.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>0FFD0FCE-420D-4D3E-AD86-6A813F1D5CCA</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Project-Luna-org/ProjectLuna.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>0FFD0FCE-420D-4D3E-AD86-6A813F1D5CCA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>0FFD0FCE-420D-4D3E-AD86-6A813F1D5CCA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ProjectLuna</string>
+		</dict>
+	</array>
+</dict>
+</plist>

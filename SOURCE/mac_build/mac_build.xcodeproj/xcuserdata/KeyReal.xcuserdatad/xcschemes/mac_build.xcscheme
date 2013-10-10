@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0450"
+   LastUpgradeVersion = "0500"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E05BDB521804836600953D84"
-               BuildableName = "ProjectLuna.app"
-               BlueprintName = "ProjectLuna"
-               ReferencedContainer = "container:ProjectLuna.xcodeproj">
+               BlueprintIdentifier = "E053283418060FEC0062732E"
+               BuildableName = "mac_build.app"
+               BlueprintName = "mac_build"
+               ReferencedContainer = "container:mac_build.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,14 +28,24 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E053285518060FEC0062732E"
+               BuildableName = "mac_buildTests.xctest"
+               BlueprintName = "mac_buildTests"
+               ReferencedContainer = "container:mac_build.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E05BDB521804836600953D84"
-            BuildableName = "ProjectLuna.app"
-            BlueprintName = "ProjectLuna"
-            ReferencedContainer = "container:ProjectLuna.xcodeproj">
+            BlueprintIdentifier = "E053283418060FEC0062732E"
+            BuildableName = "mac_build.app"
+            BlueprintName = "mac_build"
+            ReferencedContainer = "container:mac_build.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -51,10 +61,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E05BDB521804836600953D84"
-            BuildableName = "ProjectLuna.app"
-            BlueprintName = "ProjectLuna"
-            ReferencedContainer = "container:ProjectLuna.xcodeproj">
+            BlueprintIdentifier = "E053283418060FEC0062732E"
+            BuildableName = "mac_build.app"
+            BlueprintName = "mac_build"
+            ReferencedContainer = "container:mac_build.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -69,10 +79,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E05BDB521804836600953D84"
-            BuildableName = "ProjectLuna.app"
-            BlueprintName = "ProjectLuna"
-            ReferencedContainer = "container:ProjectLuna.xcodeproj">
+            BlueprintIdentifier = "E053283418060FEC0062732E"
+            BuildableName = "mac_build.app"
+            BlueprintName = "mac_build"
+            ReferencedContainer = "container:mac_build.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
