@@ -13,6 +13,12 @@
     <Filter Include="input">
       <UniqueIdentifier>{8faa8d4f-c345-4eee-8dc0-53522ccc2e4e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="shared">
+      <UniqueIdentifier>{34c4369d-8634-4ea6-a739-3de130195bae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules">
+      <UniqueIdentifier>{3b956360-33b9-4e3d-8b3b-a9e8e930b335}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="lunENG\core\main.cpp">
@@ -46,6 +52,18 @@
     <ClCompile Include="lunENG\core\renderer.cpp">
       <Filter>core</Filter>
     </ClCompile>
+    <ClCompile Include="lunENG\GLutils\sprites.cpp">
+      <Filter>GLutils</Filter>
+    </ClCompile>
+    <ClCompile Include="lunENG\shared\shared.cpp">
+      <Filter>shared</Filter>
+    </ClCompile>
+    <ClCompile Include="lunENG\modules\terrain.cpp">
+      <Filter>modules</Filter>
+    </ClCompile>
+    <ClCompile Include="lunENG\modules\freecam.cpp">
+      <Filter>modules</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lunENG\core\main.h">
@@ -78,6 +96,19 @@
     <ClInclude Include="lunENG\shaderToy.h" />
     <ClInclude Include="lunENG\core\renderer.h">
       <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="lunENG\osSetup.h" />
+    <ClInclude Include="lunENG\GLutils\sprites.h">
+      <Filter>GLutils</Filter>
+    </ClInclude>
+    <ClInclude Include="lunENG\shared\shared.h">
+      <Filter>shared</Filter>
+    </ClInclude>
+    <ClInclude Include="lunENG\modules\terrain.h">
+      <Filter>modules</Filter>
+    </ClInclude>
+    <ClInclude Include="lunENG\modules\freecam.h">
+      <Filter>modules</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

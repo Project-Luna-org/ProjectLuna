@@ -17,6 +17,7 @@ using namespace std;
 
 
 
+
 string pcharstr(unsigned char* pch)
 {
 	if (!pch) return "";
@@ -212,7 +213,7 @@ string getPathFromFullFileName(string filename)
 	}
 
 	string ss="";
-	for (int i=0;i<mycount;i++)
+	for (unsigned int i=0;i<mycount;i++)
 	{
 		ch = s[i];
 		ss+=ch;

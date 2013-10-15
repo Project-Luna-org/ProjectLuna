@@ -7,16 +7,49 @@
 
 
 
-unsigned int SetRGB32(unsigned char r, unsigned char g,unsigned char b)
+unsigned int RGB32(unsigned char r, unsigned char g,unsigned char b)
 {
-	return (( b << 16 ) | ( g << 8 ) | r );
+	Uint32 color = (( b << 16 ) | ( g << 8 ) | r );
+
+	if(SDL_BYTEORDER == SDL_BIG_ENDIAN) color =  SDL_Swap32(color);
+
+	return color;
 }
 
 void GetRGB32(unsigned int c, unsigned char &r, unsigned char &g, unsigned char &b)
 {
-	b = (( c >> 16 ) & 0xFF);
-	g = ( (c >> 8) & 0xFF );
-	r = (c & 0xFF );
+	Uint32 color=c;
+    
+	if(SDL_BYTEORDER == SDL_BIG_ENDIAN) color =  SDL_Swap32(color);
+
+	b = (( color >> 16 ) & 0xFF);
+	g = ((color >> 8) & 0xFF );
+	r = (color & 0xFF );
+}
+
+
+
+unsigned int RGBA32(unsigned char r, unsigned char g,unsigned char b, unsigned char a)
+{
+	Uint32 color = (( a << 24 ) | ( b << 16 ) | ( g << 8 ) | r );
+
+	if(SDL_BYTEORDER == SDL_BIG_ENDIAN) color =  SDL_Swap32(color);
+
+	return color;
+
+}
+
+void GetRGBA32(unsigned int c, unsigned char &r, unsigned char &g, unsigned char &b, unsigned char &a)
+{
+	Uint32 color=c;
+    
+	if(SDL_BYTEORDER == SDL_BIG_ENDIAN) color =  SDL_Swap32(color);
+
+
+	a = (( color >> 24 ) & 0xFF);
+	b = (( color >> 16 ) & 0xFF);
+	g = ((color >> 8) & 0xFF );
+	r = (color & 0xFF );
 }
 
 

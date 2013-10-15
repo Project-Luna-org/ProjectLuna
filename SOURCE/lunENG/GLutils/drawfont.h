@@ -13,7 +13,7 @@
  #include <OpenGL/OpenGL.h>
 #endif
 #ifdef OS_WIN
- #inlcude <gl/GL.h>
+ #include <gl/GL.h>
  #include <gl/GLU.h>
 #endif
 

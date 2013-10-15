@@ -1,3 +1,3 @@
 #pragma once
 
-#define OS_OSX
+#define OS_WIN

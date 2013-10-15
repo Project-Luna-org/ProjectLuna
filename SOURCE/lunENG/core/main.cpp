@@ -10,7 +10,7 @@
  #include <OpenGL/OpenGL.h>
 #endif
 #ifdef OS_WIN
- #inlcude <gl/GL.h>
+ #include <gl/GL.h>
  #include <gl/GLU.h>
 #endif
 #include <string>
@@ -28,9 +28,14 @@
 #include "../utils/setup.h"
 #include "tools.h"
 #include "main.h"
+#include "renderer.h"
+#include "../GLutils/GLstuff.h"
 #include "../GLutils/drawfont.h"
 #include "../input/keys.h"
-
+#include "../GLutils/sprites.h"
+#include "../shared/shared.h"
+#include "../modules/freecam.h"
+#include "../modules/terrain.h"
 #include "../shaderToy.h"
 
 
@@ -43,7 +48,8 @@ int MouseX=0;
 int MouseY=0;
 
 unsigned int curTimeStamp;
-drawfont* exStandartFont=NULL;
+drawfont* aStandartFont=NULL;
+sprites* aSprite=NULL;
 
 
 
@@ -140,21 +146,51 @@ int main(int argc, char** argv)
 	if (TTF_Init() < 0) error("TTF_Init fails: " + (string) SDL_GetError());  
 
 
-	exStandartFont = new drawfont(DATAfolder+"font/arial.ttf",24);
+	aStandartFont = new drawfont(DATAfolder+"font/arial.ttf",24);
+	aSprite = new sprites();
 	
 	
 	glEnable(GL_DEPTH_TEST);
 	glDepthFunc(GL_LEQUAL);
 		
 
-	// mat4 ProjMatrix = perspective(45.0f, (float) screenwidth / screenheight, 0.1f, 1000.0f);
+	mat4 ProjMatrix = perspective(45.0f, (float) screenwidth / screenheight, 0.1f, 10000.0f);
 
 
 	//////////////////////////////////////////////////////////////////////////////////////
 
 	
-			initQuad();
+		//	initQuad();
+
+			unsigned int myTerrainTexture = loadTexture(DATAfolder+"graph/highmap.jpg");
+
+			SDL_Surface* testIMG;
+			testIMG = IMG_Load(stringchar(DATAfolder+"graph/highmap.jpg"));
+
+			SDL_Surface* testNormal=calculateNormalMap(testIMG);
+
+
+			Terrain* myTerrain = new Terrain(100,4);
+			myTerrain->LoadHightMap(testIMG);
 	
+
+			shader* terrainShader;
+			if (rendererver == 1)
+			 terrainShader = new shader(DATAfolder+"shader/2.1/through.vert", DATAfolder+"shader/2.1/through.frag");
+			if (rendererver == 2)
+			 terrainShader = new shader(DATAfolder+"shader/3.2/through.vert", DATAfolder+"shader/3.2/through.frag");
+			if (rendererver == 3)
+			 terrainShader = new shader(DATAfolder+"shader/4.3/through.vert", DATAfolder+"shader/4.3/through.frag");
+    
+			renderer* terrainRenderer = new renderer(GL_STATIC_DRAW, GL_TRIANGLES,myTerrain->numVertex,terrainShader->prog);
+
+			terrainRenderer->LoadPoints(&myTerrain->PositionBuffer[0],myTerrain->numVertex);
+			terrainRenderer->LoadTextCoords(&myTerrain->TextureBuffer[0],myTerrain->numVertex);
+
+
+			freecam* myCam = new freecam();
+
+
 	//////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -235,9 +271,32 @@ int main(int argc, char** argv)
 	
 	
 		
-		drawQuad();
+		// drawQuad();
+		// aSprite->drawSprite(0,0,testNormal);
+
+			SDL_WarpMouseInWindow(SDLwindow,screenwidth / 2,screenheight / 2);
+
+		glUseProgram(terrainShader->prog);
+		glDisable(GL_LIGHTING);
+
+
+
+		    glBindTexture( GL_TEXTURE_2D,myTerrainTexture);
+
+		myCam->cameraMatrix = mat4(1);
+		myCam->CameraControl();
+		myCam->CameraTranslate();
+
+
+		mat4 matrix = ProjMatrix * myCam->cameraMatrix;
+		int matrix_location = glGetUniformLocation (terrainShader->prog, "matrix");
+		glUniformMatrix4fv (matrix_location, 1, GL_FALSE, value_ptr(matrix));
+
+
 		
 
+		terrainRenderer->Render();
+		
 
 	//////////////////////////////////////////////////////////////////////////////////////		
 
@@ -256,7 +315,7 @@ int main(int argc, char** argv)
 
 		
 
-		if (how2showFPS==0) exStandartFont->glTextOut(10, 10 , theFPS, 0xffffffff);
+		if (how2showFPS==0) aStandartFont->glTextOut(10, 10 , theFPS, 0xffffffff);
 		if (how2showFPS==1) SDL_SetWindowTitle(SDLwindow,stringchar(theFPS));
 
 
@@ -267,8 +326,10 @@ int main(int argc, char** argv)
 
 	//////////////////////////////////////////////////////////////////////////////////////	
 
-		closeQuad();
+	 //	closeQuad();
 
+	terrainRenderer->~renderer();
+	terrainShader->~shader();
 
 	//////////////////////////////////////////////////////////////////////////////////////	
 
@@ -276,7 +337,8 @@ int main(int argc, char** argv)
 
 
 
-	 exStandartFont->~drawfont();
+	 aStandartFont->~drawfont();
+	 aSprite->~sprites();
 
 
 	TTF_Quit();

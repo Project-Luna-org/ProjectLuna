@@ -12,7 +12,7 @@
 #include <OpenGL/OpenGL.h>
 #endif
 #ifdef OS_WIN
-#inlcude <gl/GL.h>
+#include <gl/GL.h>
 #include <gl/GLU.h>
 #endif
 
@@ -236,7 +236,6 @@ void drawfont::glTextOut(int x, int y, string txt, Uint32 color)
 	glDeleteBuffers(1,&UVsVBO);
 	*/
 
-
 	
 }
 
@@ -247,11 +246,11 @@ drawfont::drawfont(string fontfilename,int size)
 	if (!(curfont = TTF_OpenFont(stringchar(fontfilename), size))) error("TTF_OpenFont "+fontfilename+" fails: " + (string) SDL_GetError());
 
     if (rendererver == 1)
-	 FontShader = new shader(DATAfolder+"shader/2.1/font.vert", DATAfolder+"shader/2.1/font.frag");
+	 FontShader = new shader(DATAfolder+"shader/2.1/through.vert", DATAfolder+"shader/2.1/through.frag");
     if (rendererver == 2)
-     FontShader = new shader(DATAfolder+"shader/3.2/font.vert", DATAfolder+"shader/3.2/font.frag");
+     FontShader = new shader(DATAfolder+"shader/3.2/through.vert", DATAfolder+"shader/3.2/through.frag");
     if (rendererver == 3)
-     FontShader = new shader(DATAfolder+"shader/4.3/font.vert", DATAfolder+"shader/4.3/font.frag");
+     FontShader = new shader(DATAfolder+"shader/4.3/through.vert", DATAfolder+"shader/4.3/through.frag");
     
 }
 

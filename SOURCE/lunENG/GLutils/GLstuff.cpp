@@ -12,7 +12,7 @@
 #include <OpenGL/OpenGL.h>
 #endif
 #ifdef OS_WIN
-#inlcude <gl/GL.h>
+#include <gl/GL.h>
 #include <gl/GLU.h>
 #endif
 
@@ -26,6 +26,7 @@
 #include <glm.hpp>
 #include <ext.hpp>
 
+#include "../core/renderer.h"
 #include "../core/tools.h"
 #include "../core/main.h"
 

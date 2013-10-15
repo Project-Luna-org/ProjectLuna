@@ -12,3 +12,9 @@ cd..
 cd utils
 del *.o
 cd..
+cd modules
+del *.o
+cd..
+cd shared
+del *.o
+cd..

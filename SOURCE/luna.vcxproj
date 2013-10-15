@@ -78,8 +78,12 @@
     <ClCompile Include="lunENG\GLutils\drawfont.cpp" />
     <ClCompile Include="lunENG\GLutils\GLstuff.cpp" />
     <ClCompile Include="lunENG\GLutils\shader.cpp" />
+    <ClCompile Include="lunENG\GLutils\sprites.cpp" />
     <ClCompile Include="lunENG\input\keys.cpp" />
+    <ClCompile Include="lunENG\modules\freecam.cpp" />
+    <ClCompile Include="lunENG\modules\terrain.cpp" />
     <ClCompile Include="lunENG\shaderToy.cpp" />
+    <ClCompile Include="lunENG\shared\shared.cpp" />
     <ClCompile Include="lunENG\utils\INIparser.cpp" />
     <ClCompile Include="lunENG\utils\SDLgraph.cpp" />
     <ClCompile Include="lunENG\utils\setup.cpp" />
@@ -91,8 +95,13 @@
     <ClInclude Include="lunENG\GLutils\drawfont.h" />
     <ClInclude Include="lunENG\GLutils\GLstuff.h" />
     <ClInclude Include="lunENG\GLutils\shader.h" />
+    <ClInclude Include="lunENG\GLutils\sprites.h" />
     <ClInclude Include="lunENG\input\keys.h" />
+    <ClInclude Include="lunENG\modules\freecam.h" />
+    <ClInclude Include="lunENG\modules\terrain.h" />
+    <ClInclude Include="lunENG\osSetup.h" />
     <ClInclude Include="lunENG\shaderToy.h" />
+    <ClInclude Include="lunENG\shared\shared.h" />
     <ClInclude Include="lunENG\utils\INIparser.h" />
     <ClInclude Include="lunENG\utils\SDLgraph.h" />
     <ClInclude Include="lunENG\utils\setup.h" />
