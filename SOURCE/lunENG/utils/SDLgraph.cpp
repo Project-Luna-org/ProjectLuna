@@ -1,10 +1,11 @@
-
+#include <string>
 
 #include <SDL.h>
+#include <SDL_image.h>
 
 #include "SDLgraph.h"
 
-
+using namespace std;
 
 
 unsigned int RGB32(unsigned char r, unsigned char g,unsigned char b)
@@ -65,4 +66,15 @@ void putpixel32(SDL_Surface *surface, int x, int y, Uint32 pixel)
 {
     Uint8 *p = (Uint8 *)surface->pixels + y * surface->pitch + x * 4;
     *(Uint32 *)p = pixel;
+}
+
+
+
+
+SDL_Surface* LoadIMG(string filename)
+{
+	SDL_Surface* img;
+	img = IMG_Load(filename.c_str());
+	img = SDL_ConvertSurfaceFormat(img,SDL_PIXELFORMAT_ARGB8888,0);
+	return img;
 }

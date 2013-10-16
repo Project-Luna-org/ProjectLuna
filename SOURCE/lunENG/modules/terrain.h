@@ -36,7 +36,7 @@ public:
     Terrain(float theheightScale, float theblockScale);
    ~Terrain();
 
-   void LoadHightMap(SDL_Surface* heightmap);
+   void LoadHeightMap(SDL_Surface* heightmap);
 
     unsigned int width;
 	unsigned int breight;
@@ -50,8 +50,8 @@ public:
 
 	unsigned int numVertex;
 
-	vec3* PositionBuffer;
-	vec2* TextureBuffer;
+	float* PositionBuffer;
+	float* TextureBuffer;
 
 
 

@@ -52,7 +52,7 @@ Terrain::~Terrain()
 
 
 
-void Terrain::LoadHightMap(SDL_Surface* heightmap)
+void Terrain::LoadHeightMap(SDL_Surface* heightmap)
 {
 
 	width = heightmap->w;
@@ -69,20 +69,22 @@ void Terrain::LoadHightMap(SDL_Surface* heightmap)
 		for (unsigned int x=0; x<width; x++)
 		{
 
-			Uint8 r,g,b;
-			GetRGB32(getpixel32(heightmap,x,z),r,g,b);
-			float height = r / 256.0f * HeightScale;
-			TerrainPositions[index].y=height;
+			index=z*width+x;
 
-			TerrainPositions[index].x=(float)x * BlockScale;
-			TerrainPositions[index].z=(float)z * BlockScale;
+			Uint8 h = *((Uint8*) heightmap->pixels+ z*heightmap->pitch+x*4);
+			float height = (float)h / 255.0f;
+
+			TerrainPositions[index].y=height * HeightScale;
+
+			TerrainPositions[index].x=float(x) * BlockScale;
+			TerrainPositions[index].z=float(z) * BlockScale;
 
 
 			TerrainTexture[index].x = (float) x / (float) width;
 			TerrainTexture[index].y = (float) z / (float) breight;
 
 
-			index++;
+		
 		}
 
 	}
@@ -90,44 +92,69 @@ void Terrain::LoadHightMap(SDL_Surface* heightmap)
 
 
 
-    const unsigned int numTriangles = ( width - 1 ) * ( breight - 1 ) * 2;
-    int* IndexBuffer = new int [ numTriangles * 3 ];
- 
-    index = 0;
-    for (unsigned int j = 0; j < (breight - 1); ++j )
-    {
-        for (unsigned int i = 0; i < (width - 1); ++i )
-        {
-            int vertexIndex = ( j * width ) + i;
-            // Top triangle (T0)
-            IndexBuffer[index++] = vertexIndex;                    // V0
-            IndexBuffer[index++] = vertexIndex + width + 1;        // V3
-            IndexBuffer[index++] = vertexIndex + 1;                // V1
-            // Bottom triangle (T1)
-            IndexBuffer[index++] = vertexIndex;                    // V0
-            IndexBuffer[index++] = vertexIndex + width;            // V2
-            IndexBuffer[index++] = vertexIndex + width + 1;        // V3
-        }
-    }
+	numVertex = width*breight*2*3*3; 
+
+    PositionBuffer = new float [numVertex];
+	TextureBuffer = new float [numVertex];
 
 
+	unsigned int i=0;
+	for (unsigned int z=0;z<breight-1;z++)
+		for (unsigned int x=0;x<width-1;x++)
+		{
+			//bottom triangle
+			index=((z)*width)+(x);
+			PositionBuffer[i++] = TerrainPositions[index].x;
+			PositionBuffer[i++] = TerrainPositions[index].y;
+			PositionBuffer[i++] = TerrainPositions[index].z;
+			index=((z)*width)+(x+1);
+			PositionBuffer[i++] = TerrainPositions[index].x;
+			PositionBuffer[i++] = TerrainPositions[index].y;
+			PositionBuffer[i++] = TerrainPositions[index].z;
+			index=((z+1)*width)+(x+1);
+			PositionBuffer[i++] = TerrainPositions[index].x;
+			PositionBuffer[i++] = TerrainPositions[index].y;
+			PositionBuffer[i++] = TerrainPositions[index].z;
+			//top triangle
+			index=((z)*width)+(x);
+			PositionBuffer[i++] = TerrainPositions[index].x;
+			PositionBuffer[i++] = TerrainPositions[index].y;
+			PositionBuffer[i++] = TerrainPositions[index].z;
+			index=((z+1)*width)+(x+1);
+			PositionBuffer[i++] = TerrainPositions[index].x;
+			PositionBuffer[i++] = TerrainPositions[index].y;
+			PositionBuffer[i++] = TerrainPositions[index].z;
+			index=((z+1)*width)+x;
+			PositionBuffer[i++] = TerrainPositions[index].x;
+			PositionBuffer[i++] = TerrainPositions[index].y;
+			PositionBuffer[i++] = TerrainPositions[index].z;
+		}
 
-	numVertex = index*4;
 
-	PositionBuffer = new vec3 [numVertex];
-	TextureBuffer = new vec2 [numVertex];
-
-	for (unsigned int  i=0;i<index;i++)
-	{
-		PositionBuffer[i].x = TerrainPositions[IndexBuffer[i]].x;
-		PositionBuffer[i].y = TerrainPositions[IndexBuffer[i]].y;
-		PositionBuffer[i].z = TerrainPositions[IndexBuffer[i]].z;
-	
-		TextureBuffer[i].x = TerrainTexture[IndexBuffer[i]].x;
-		TextureBuffer[i].y = TerrainTexture[IndexBuffer[i]].y;
-
-	}
-
-	
+	i=0;
+	for (unsigned int z=0;z<breight-1;z++)
+		for (unsigned int x=0;x<width-1;x++)
+		{
+			//bottom triangle
+			index=((z)*width)+(x);
+			TextureBuffer[i++] = TerrainTexture[index].x;
+			TextureBuffer[i++] = TerrainTexture[index].y;
+			index=((z)*width)+(x+1);
+			TextureBuffer[i++] = TerrainTexture[index].x;
+			TextureBuffer[i++] = TerrainTexture[index].y;
+			index=((z+1)*width)+(x+1);
+			TextureBuffer[i++] = TerrainTexture[index].x;
+			TextureBuffer[i++] = TerrainTexture[index].y;
+			//top triangle
+			index=((z)*width)+(x);
+			TextureBuffer[i++] = TerrainTexture[index].x;
+			TextureBuffer[i++] = TerrainTexture[index].y;
+			index=((z+1)*width)+(x+1);
+			TextureBuffer[i++] = TerrainTexture[index].x;
+			TextureBuffer[i++] = TerrainTexture[index].y;
+			index=((z+1)*width)+x;
+			TextureBuffer[i++] = TerrainTexture[index].x;
+			TextureBuffer[i++] = TerrainTexture[index].y;
+		}
 		
 }

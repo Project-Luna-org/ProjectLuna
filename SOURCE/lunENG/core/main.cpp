@@ -29,6 +29,7 @@
 #include "tools.h"
 #include "main.h"
 #include "renderer.h"
+#include "../utils/SDLgraph.h"
 #include "../GLutils/GLstuff.h"
 #include "../GLutils/drawfont.h"
 #include "../input/keys.h"
@@ -162,16 +163,16 @@ int main(int argc, char** argv)
 	
 		//	initQuad();
 
-			unsigned int myTerrainTexture = loadTexture(DATAfolder+"graph/highmap.jpg");
+			unsigned int myTerrainTexture = loadTexture(DATAfolder+"graph/terra.jpg");
 
 			SDL_Surface* testIMG;
-			testIMG = IMG_Load(stringchar(DATAfolder+"graph/highmap.jpg"));
+			testIMG = LoadIMG(DATAfolder+"graph/terra.jpg");
 
-			SDL_Surface* testNormal=calculateNormalMap(testIMG);
+			//SDL_Surface* testNormal=calculateNormalMap(testIMG);
 
 
 			Terrain* myTerrain = new Terrain(100,4);
-			myTerrain->LoadHightMap(testIMG);
+			myTerrain->LoadHeightMap(testIMG);
 	
 
 			shader* terrainShader;
