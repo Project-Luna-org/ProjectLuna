@@ -1,4 +1,26 @@
-﻿#define NO_SDL_GLEXT
+﻿/* $Id: freecam.cpp
+   Copyright (C) 2013 Kirill Kranz
+
+  This source is free software; you can redistribute it and/or modify it under
+  the terms of the GNU General Public License as published by the Free
+  Software Foundation; either version 2 of the License, or (at your option)
+  any later version.
+
+  This code is distributed in the hope that it will be useful, but WITHOUT ANY
+  WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+  FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
+  details.
+
+  A copy of the GNU General Public License is available on the World Wide Web
+  at <http://www.gnu.org/copyleft/gpl.html>. You can also obtain it by writing
+  to the Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+  MA 02111-1307, USA.
+*/
+
+
+
+
+#define NO_SDL_GLEXT
 
 #include <Windows.h>
 #include <glew.h>
@@ -32,8 +54,6 @@ using namespace glm;
 
 freecam::freecam()
 {
-
-	fly=true;
 
 	camX=100;
 	camY=10;
@@ -109,7 +129,7 @@ void freecam::CameraControl()
 			if ((camPitch!=90) && (camPitch!=-90))
 			{
 				moveCamera(keyvel,0);
-				if(fly) moveCameraUp(keyvel,0);
+				moveCameraUp(keyvel,0);
 			}
 		}
 		if (keys::DOWNpressed)
@@ -117,7 +137,7 @@ void freecam::CameraControl()
 			if ((camPitch!=90) && (camPitch!=-90))
 			{
 				moveCamera(keyvel,180);
-                if(fly) moveCameraUp(keyvel,180);
+                moveCameraUp(keyvel,180);
 			}
 		}
 		if (keys::LEFTpressed)
@@ -129,13 +149,8 @@ void freecam::CameraControl()
 			moveCamera(keyvel,270);
 		}
 	
-	//glRotatef(-camPitch,1,0,0);
-	//glRotatef(-camYaw,0,1,0);
-		
 		cameraMatrix = rotate(cameraMatrix, -camPitch, vec3(1.0f, 0.0f, 0.0f));
 		cameraMatrix = rotate(cameraMatrix, -camYaw, vec3(0.0f, 1.0f, 0.0f));
-		
-		
 	
 }
 

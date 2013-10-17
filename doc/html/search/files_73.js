@@ -6,8 +6,6 @@ var searchData=
   ['setup_2eh',['setup.h',['../setup_8h.html',1,'']]],
   ['shader_2ecpp',['shader.cpp',['../shader_8cpp.html',1,'']]],
   ['shader_2eh',['shader.h',['../shader_8h.html',1,'']]],
-  ['shadertoy_2ecpp',['shaderToy.cpp',['../shader_toy_8cpp.html',1,'']]],
-  ['shadertoy_2eh',['shaderToy.h',['../shader_toy_8h.html',1,'']]],
   ['shared_2ecpp',['shared.cpp',['../shared_8cpp.html',1,'']]],
   ['shared_2eh',['shared.h',['../shared_8h.html',1,'']]],
   ['sprites_2ecpp',['sprites.cpp',['../sprites_8cpp.html',1,'']]],

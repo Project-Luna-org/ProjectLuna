@@ -82,7 +82,7 @@
     <ClCompile Include="lunENG\input\keys.cpp" />
     <ClCompile Include="lunENG\modules\freecam.cpp" />
     <ClCompile Include="lunENG\modules\terrain.cpp" />
-    <ClCompile Include="lunENG\shaderToy.cpp" />
+    <ClCompile Include="lunENG\shared\OBJparser.cpp" />
     <ClCompile Include="lunENG\shared\shared.cpp" />
     <ClCompile Include="lunENG\utils\INIparser.cpp" />
     <ClCompile Include="lunENG\utils\SDLgraph.cpp" />
@@ -100,7 +100,7 @@
     <ClInclude Include="lunENG\modules\freecam.h" />
     <ClInclude Include="lunENG\modules\terrain.h" />
     <ClInclude Include="lunENG\osSetup.h" />
-    <ClInclude Include="lunENG\shaderToy.h" />
+    <ClInclude Include="lunENG\shared\OBJparser.h" />
     <ClInclude Include="lunENG\shared\shared.h" />
     <ClInclude Include="lunENG\utils\INIparser.h" />
     <ClInclude Include="lunENG\utils\SDLgraph.h" />

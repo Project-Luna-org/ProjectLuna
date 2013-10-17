@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -87,35 +88,66 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">sprites.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="sprites_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;SDL.h&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="shader_8h.html">shader.h</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="classsprites.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="classsprites.html">sprites</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <a class="code" href="classsprites.html#a62d8f5fe04966bbb91fda9fbcdb9ccfc">sprites</a>();</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;       <a class="code" href="classsprites.html#adcfb93bf068a6b76b13fa0855d95983c">~sprites</a>();</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classsprites.html#ac519f46ba21f9b288282fab367c3c34a">drawSprite</a>(<span class="keywordtype">int</span> x,<span class="keywordtype">int</span> y, SDL_Surface* img);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="code" href="classshader.html">shader</a>* SpriteShader;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;};</div>
-<div class="ttc" id="classsprites_html"><div class="ttname"><a href="classsprites.html">sprites</a></div><div class="ttdef"><b>Definition:</b> sprites.h:6</div></div>
-<div class="ttc" id="classsprites_html_a62d8f5fe04966bbb91fda9fbcdb9ccfc"><div class="ttname"><a href="classsprites.html#a62d8f5fe04966bbb91fda9fbcdb9ccfc">sprites::sprites</a></div><div class="ttdeci">sprites()</div><div class="ttdef"><b>Definition:</b> sprites.cpp:37</div></div>
-<div class="ttc" id="shader_8h_html"><div class="ttname"><a href="shader_8h.html">shader.h</a></div></div>
-<div class="ttc" id="classshader_html"><div class="ttname"><a href="classshader.html">shader</a></div><div class="ttdef"><b>Definition:</b> shader.h:7</div></div>
-<div class="ttc" id="classsprites_html_ac519f46ba21f9b288282fab367c3c34a"><div class="ttname"><a href="classsprites.html#ac519f46ba21f9b288282fab367c3c34a">sprites::drawSprite</a></div><div class="ttdeci">void drawSprite(int x, int y, SDL_Surface *img)</div><div class="ttdef"><b>Definition:</b> sprites.cpp:57</div></div>
-<div class="ttc" id="classsprites_html_adcfb93bf068a6b76b13fa0855d95983c"><div class="ttname"><a href="classsprites.html#adcfb93bf068a6b76b13fa0855d95983c">sprites::~sprites</a></div><div class="ttdeci">~sprites()</div><div class="ttdef"><b>Definition:</b> sprites.cpp:50</div></div>
+<a href="sprites_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* $Id: sprites.h </span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Copyright (C) 2013 Kirill Kranz</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">  This source is free software; you can redistribute it and/or modify it under</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">  the terms of the GNU General Public License as published by the Free</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">  Software Foundation; either version 2 of the License, or (at your option)</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">  any later version.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">  This code is distributed in the hope that it will be useful, but WITHOUT ANY</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">  WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">  FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">  details.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">  A copy of the GNU General Public License is available on the World Wide Web</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">  at &lt;http://www.gnu.org/copyleft/gpl.html&gt;. You can also obtain it by writing</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">  to the Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston,</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">  MA 02111-1307, USA.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;SDL.h&gt;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="shader_8h.html">shader.h</a>&quot;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classsprites.html">   46</a></span>&#160;<span class="keyword">class </span><a class="code" href="classsprites.html">sprites</a></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="classsprites.html#a62d8f5fe04966bbb91fda9fbcdb9ccfc">sprites</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;       <a class="code" href="classsprites.html#adcfb93bf068a6b76b13fa0855d95983c">~sprites</a>();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classsprites.html#ac519f46ba21f9b288282fab367c3c34a">drawSprite</a>(<span class="keywordtype">int</span> x,<span class="keywordtype">int</span> y, SDL_Surface* img);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="classshader.html">shader</a>* SpriteShader;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;};</div>
+<div class="ttc" id="classsprites_html"><div class="ttname"><a href="classsprites.html">sprites</a></div><div class="ttdoc">loads the shaders needed for a sprite blit operation   </div><div class="ttdef"><b>Definition:</b> sprites.h:46</div></div>
+<div class="ttc" id="classsprites_html_a62d8f5fe04966bbb91fda9fbcdb9ccfc"><div class="ttname"><a href="classsprites.html#a62d8f5fe04966bbb91fda9fbcdb9ccfc">sprites::sprites</a></div><div class="ttdeci">sprites()</div><div class="ttdoc">loads the shaders needed for a sprite blit operation   </div><div class="ttdef"><b>Definition:</b> sprites.cpp:56</div></div>
+<div class="ttc" id="shader_8h_html"><div class="ttname"><a href="shader_8h.html">shader.h</a></div><div class="ttdoc">manages a shader   </div></div>
+<div class="ttc" id="classshader_html"><div class="ttname"><a href="classshader.html">shader</a></div><div class="ttdoc">use this class to manage a shader pair   </div><div class="ttdef"><b>Definition:</b> shader.h:48</div></div>
+<div class="ttc" id="classsprites_html_ac519f46ba21f9b288282fab367c3c34a"><div class="ttname"><a href="classsprites.html#ac519f46ba21f9b288282fab367c3c34a">sprites::drawSprite</a></div><div class="ttdeci">void drawSprite(int x, int y, SDL_Surface *img)</div><div class="ttdoc">draws a sprite on the given position on the display </div><div class="ttdef"><b>Definition:</b> sprites.cpp:76</div></div>
+<div class="ttc" id="classsprites_html_adcfb93bf068a6b76b13fa0855d95983c"><div class="ttname"><a href="classsprites.html#adcfb93bf068a6b76b13fa0855d95983c">sprites::~sprites</a></div><div class="ttdeci">~sprites()</div><div class="ttdoc">cleans the memory of ths class </div><div class="ttdef"><b>Definition:</b> sprites.cpp:69</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 17 2013 02:29:34 for Luna by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Oct 17 2013 19:40:30 for Luna by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

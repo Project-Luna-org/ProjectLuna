@@ -2,7 +2,7 @@ var searchData=
 [
   ['randomrange',['randomRange',['../tools_8cpp.html#a3804c360713824ad18bb3055be938d88',1,'randomRange(int low, int high):&#160;tools.cpp'],['../tools_8h.html#a3804c360713824ad18bb3055be938d88',1,'randomRange(int low, int high):&#160;tools.cpp']]],
   ['render',['Render',['../classrenderer.html#ab3e163805f5d17d9f480d1758d7d926d',1,'renderer']]],
-  ['renderer',['renderer',['../classrenderer.html',1,'renderer'],['../classrenderer.html#a279240d722ea2cc92d8f422f0f74412c',1,'renderer::renderer()']]],
+  ['renderer',['renderer',['../classrenderer.html',1,'renderer'],['../classrenderer.html#a9c8e4d70efabc2a06524793e093aa618',1,'renderer::renderer()']]],
   ['renderer_2ecpp',['renderer.cpp',['../renderer_8cpp.html',1,'']]],
   ['renderer_2eh',['renderer.h',['../renderer_8h.html',1,'']]],
   ['rendererver',['rendererver',['../setup_8cpp.html#af73a0dc09aee368979f04668eb526dc5',1,'rendererver():&#160;setup.cpp'],['../setup_8h.html#af73a0dc09aee368979f04668eb526dc5',1,'rendererver():&#160;setup.cpp']]],

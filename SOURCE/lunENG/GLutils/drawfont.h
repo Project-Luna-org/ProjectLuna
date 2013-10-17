@@ -23,11 +23,11 @@
  *
  * @brief      draws a string on the display with a given position <p/> <br/> 
  * @details    The font size is fixed by the initialisation and can not been changed after it.<p/> <br/> 
-    		   this module expects the "through shader" in the shader directory. <br/>
-			   it means you must have setuped the DATAfolder variable properly to your DATA folder <br/>
-			   than you must have setuped the renderver variable to 1,2 or 3 to chose the GLSL version <br/>
-			   and you must have, depends on the setuped GLSL version, the proper folder with the <br/>
-			   through.vert and through.frag shaders <br/>
+ *   		   this module expects the "through shader" in the shader directory. <br/>
+ *			   it means you must have setuped the DATAfolder variable properly to your DATA folder <br/>
+ *			   than you must have setuped the renderver variable to 1,2 or 3 to chose the GLSL version <br/>
+ *			   and you must have, depends on the setuped GLSL version, the proper folder with the <br/>
+ *			   through.vert and through.frag shaders <br/>
  */
 
 
@@ -99,7 +99,7 @@ public:
 
 
 /**
- * @brief      cleans the memory from ths class
+ * @brief      cleans the memory of this class
  *
  */
    ~drawfont();

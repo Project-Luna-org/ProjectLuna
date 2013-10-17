@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['initquad',['initQuad',['../shader_toy_8cpp.html#a9fb981be2273757665639fab606037ec',1,'initQuad():&#160;shaderToy.cpp'],['../shader_toy_8h.html#a9fb981be2273757665639fab606037ec',1,'initQuad():&#160;shaderToy.cpp']]]
+  ['iniparser',['INIparser',['../class_i_n_iparser.html#a4b716574c4c72dbbb69ce3ae4e72a5c4',1,'INIparser']]]
 ];

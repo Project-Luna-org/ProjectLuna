@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = lunENG/GLutils/drawfont.o lunENG/GLutils/GLstuff.o lunENG/GLutils/shader.o lunENG/core/main.o lunENG/core/tools.o lunENG/input/keys.o lunENG/utils/INIparser.o lunENG/utils/SDLgraph.o lunENG/utils/setup.o lunENG/shaderToy.o lunENG/core/renderer.o lunENG/GLutils/sprites.o lunENG/modules/freecam.o lunENG/modules/terrain.o lunENG/shared/shared.o
-LINKOBJ  = lunENG/GLutils/drawfont.o lunENG/GLutils/GLstuff.o lunENG/GLutils/shader.o lunENG/core/main.o lunENG/core/tools.o lunENG/input/keys.o lunENG/utils/INIparser.o lunENG/utils/SDLgraph.o lunENG/utils/setup.o lunENG/shaderToy.o lunENG/core/renderer.o lunENG/GLutils/sprites.o lunENG/modules/freecam.o lunENG/modules/terrain.o lunENG/shared/shared.o
+OBJ      = lunENG/GLutils/drawfont.o lunENG/GLutils/GLstuff.o lunENG/GLutils/shader.o lunENG/core/main.o lunENG/core/tools.o lunENG/input/keys.o lunENG/utils/INIparser.o lunENG/utils/SDLgraph.o lunENG/utils/setup.o lunENG/core/renderer.o lunENG/GLutils/sprites.o lunENG/modules/freecam.o lunENG/modules/terrain.o lunENG/shared/shared.o lunENG/shared/OBJparser.o
+LINKOBJ  = lunENG/GLutils/drawfont.o lunENG/GLutils/GLstuff.o lunENG/GLutils/shader.o lunENG/core/main.o lunENG/core/tools.o lunENG/input/keys.o lunENG/utils/INIparser.o lunENG/utils/SDLgraph.o lunENG/utils/setup.o lunENG/core/renderer.o lunENG/GLutils/sprites.o lunENG/modules/freecam.o lunENG/modules/terrain.o lunENG/shared/shared.o lunENG/shared/OBJparser.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -L"lunENG/Frameworks/mingw/SDL2/Lib" -L"lunENG/Frameworks/mingw/Glew/Lib" -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lOpenGL32 -lGLew32 -lGLu32  -s
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"lunENG/Frameworks/mingw/Glew/include" -I"lunENG/Frameworks/mingw/SDL2/Include" -I"lunENG/Frameworks/glm"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"lunENG/Frameworks/mingw/Glew/include" -I"lunENG/Frameworks/mingw/SDL2/Include" -I"lunENG/Frameworks/glm"
@@ -52,9 +52,6 @@ lunENG/utils/SDLgraph.o: lunENG/utils/SDLgraph.cpp
 lunENG/utils/setup.o: lunENG/utils/setup.cpp
 	$(CPP) -c lunENG/utils/setup.cpp -o lunENG/utils/setup.o $(CXXFLAGS)
 
-lunENG/shaderToy.o: lunENG/shaderToy.cpp
-	$(CPP) -c lunENG/shaderToy.cpp -o lunENG/shaderToy.o $(CXXFLAGS)
-
 lunENG/core/renderer.o: lunENG/core/renderer.cpp
 	$(CPP) -c lunENG/core/renderer.cpp -o lunENG/core/renderer.o $(CXXFLAGS)
 
@@ -69,3 +66,6 @@ lunENG/modules/terrain.o: lunENG/modules/terrain.cpp
 
 lunENG/shared/shared.o: lunENG/shared/shared.cpp
 	$(CPP) -c lunENG/shared/shared.cpp -o lunENG/shared/shared.o $(CXXFLAGS)
+
+lunENG/shared/OBJparser.o: lunENG/shared/OBJparser.cpp
+	$(CPP) -c lunENG/shared/OBJparser.cpp -o lunENG/shared/OBJparser.o $(CXXFLAGS)

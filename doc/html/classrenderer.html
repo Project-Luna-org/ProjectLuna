@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -87,22 +88,49 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">renderer Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>manages the rendering depends on the GLSL version (the renderver variable) <br/>
+  
+ <a href="classrenderer.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a279240d722ea2cc92d8f422f0f74412c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrenderer.html#a279240d722ea2cc92d8f422f0f74412c">renderer</a> (unsigned int drawingMode, unsigned int PrimitiveType, unsigned int numVertex, unsigned int shaderProc)</td></tr>
-<tr class="separator:a279240d722ea2cc92d8f422f0f74412c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c8e4d70efabc2a06524793e093aa618"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrenderer.html#a9c8e4d70efabc2a06524793e093aa618">renderer</a> (unsigned int drawingMode, unsigned int PrimitiveType, unsigned int shaderProc)</td></tr>
+<tr class="memdesc:a9c8e4d70efabc2a06524793e093aa618"><td class="mdescLeft">&#160;</td><td class="mdescRight">setups the Drawing Mode, the Primetive Type and the Shader Program <br/>
+  <a href="#a9c8e4d70efabc2a06524793e093aa618">More...</a><br/></td></tr>
+<tr class="separator:a9c8e4d70efabc2a06524793e093aa618"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c7f1cfc1cd1292c2ec8519dacdce0a6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrenderer.html#a5c7f1cfc1cd1292c2ec8519dacdce0a6">~renderer</a> ()</td></tr>
+<tr class="memdesc:a5c7f1cfc1cd1292c2ec8519dacdce0a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">clean up <br/>
+  <a href="#a5c7f1cfc1cd1292c2ec8519dacdce0a6">More...</a><br/></td></tr>
 <tr class="separator:a5c7f1cfc1cd1292c2ec8519dacdce0a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99c1f00045cfefa9db74bee116c3e544"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrenderer.html#a99c1f00045cfefa9db74bee116c3e544">setNumVertex</a> (unsigned int numVertex)</td></tr>
+<tr class="memdesc:a99c1f00045cfefa9db74bee116c3e544"><td class="mdescLeft">&#160;</td><td class="mdescRight">set the number of Vertex will be drawn with the <a class="el" href="classrenderer.html#ab3e163805f5d17d9f480d1758d7d926d" title="renders the data in the Buffers depends on the GLSL version  ">Render()</a> function, depends on the Primetive Type <br/>
+  <a href="#a99c1f00045cfefa9db74bee116c3e544">More...</a><br/></td></tr>
+<tr class="separator:a99c1f00045cfefa9db74bee116c3e544"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2f07dc614d4d55764cd96950d5b1ef1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrenderer.html#ad2f07dc614d4d55764cd96950d5b1ef1">LoadPoints</a> (void *data, unsigned int numPoints)</td></tr>
+<tr class="memdesc:ad2f07dc614d4d55764cd96950d5b1ef1"><td class="mdescLeft">&#160;</td><td class="mdescRight">passes a float array and number of floats (one float for X, Y and Z) to the VertexBuffer of the renderer <br/>
+  <a href="#ad2f07dc614d4d55764cd96950d5b1ef1">More...</a><br/></td></tr>
 <tr class="separator:ad2f07dc614d4d55764cd96950d5b1ef1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5af37f1ffe86c5cae1fde1c412993671"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrenderer.html#a5af37f1ffe86c5cae1fde1c412993671">LoadTextCoords</a> (void *data, unsigned int numUVs)</td></tr>
+<tr class="memdesc:a5af37f1ffe86c5cae1fde1c412993671"><td class="mdescLeft">&#160;</td><td class="mdescRight">passes a float array and number of floats (one float for U, V ) to the TextureCoordinateBuffer of the renderer <br/>
+  <a href="#a5af37f1ffe86c5cae1fde1c412993671">More...</a><br/></td></tr>
 <tr class="separator:a5af37f1ffe86c5cae1fde1c412993671"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3e163805f5d17d9f480d1758d7d926d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrenderer.html#ab3e163805f5d17d9f480d1758d7d926d">Render</a> ()</td></tr>
+<tr class="memdesc:ab3e163805f5d17d9f480d1758d7d926d"><td class="mdescLeft">&#160;</td><td class="mdescRight">renders the data in the Buffers depends on the GLSL version<br/>
+  <a href="#ab3e163805f5d17d9f480d1758d7d926d">More...</a><br/></td></tr>
 <tr class="separator:ab3e163805f5d17d9f480d1758d7d926d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a279240d722ea2cc92d8f422f0f74412c"></a>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>manages the rendering depends on the GLSL version (the renderver variable) </p>
+<p><br/>
+ </p>
+<p>loads and renders a VertexBuffer with a custom Primitive Type and Draw Mode. </p>
+<p><br/>
+ requers seted shader Program and Vertex count to render </p>
+<p><br/>
+ </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a9c8e4d70efabc2a06524793e093aa618"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -122,12 +150,6 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>numVertex</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>shaderProc</em>&#160;</td>
         </tr>
         <tr>
@@ -137,6 +159,33 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>setups the Drawing Mode, the Primetive Type and the Shader Program <br/>
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">drawingMode</td><td>can be GL_STREAM_DRAW or GL_STATIC_DRAW </td></tr>
+  </table>
+  </dd>
+</dl>
+<p><br/>
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">PrimitiveType</td><td>can be GL_TRIANLGES or GL_TRIANGLE_FAN​ or GL_TRIANGLE_STRIP​ or GL_POINTS​ or GL_LINES​ or GL_LINE_LOOP​ or GL_LINE_STRIP​ </td></tr>
+  </table>
+  </dd>
+</dl>
+<p><br/>
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">shaderProc</td><td>must be the shader program which manages the display output </td></tr>
+  </table>
+  </dd>
+</dl>
+<p><br/>
+ </p>
 
 </div>
 </div>
@@ -152,6 +201,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>clean up <br/>
+ </p>
 
 </div>
 </div>
@@ -180,6 +232,25 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>passes a float array and number of floats (one float for X, Y and Z) to the VertexBuffer of the renderer <br/>
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>an array of vertex data </td></tr>
+  </table>
+  </dd>
+</dl>
+<p><br/>
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">numPoints</td><td>number of floats (one float for X, Y and Z). If you have one vertex pass 3 here </td></tr>
+  </table>
+  </dd>
+</dl>
+<p><br/>
+ </p>
+
 </div>
 </div>
 <a class="anchor" id="a5af37f1ffe86c5cae1fde1c412993671"></a>
@@ -206,6 +277,25 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>passes a float array and number of floats (one float for U, V ) to the TextureCoordinateBuffer of the renderer <br/>
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>an array of texture coordinate data </td></tr>
+  </table>
+  </dd>
+</dl>
+<p><br/>
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">numUVs</td><td>number of floats (one float for U, V). If you have one texture coordinate pass 2 here </td></tr>
+  </table>
+  </dd>
+</dl>
+<p><br/>
+ </p>
+
 </div>
 </div>
 <a class="anchor" id="ab3e163805f5d17d9f480d1758d7d926d"></a>
@@ -221,6 +311,33 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>renders the data in the Buffers depends on the GLSL version<br/>
+ </p>
+<p>you must mannualy setup the shader program, the material and the matrix</p>
+<p><br/>
+ this function renders only the earlier given Buffers depends on the GLSL version (renderver variable)</p>
+<p><br/>
+ </p>
+
+</div>
+</div>
+<a class="anchor" id="a99c1f00045cfefa9db74bee116c3e544"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void renderer::setNumVertex </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>numVertex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>set the number of Vertex will be drawn with the <a class="el" href="classrenderer.html#ab3e163805f5d17d9f480d1758d7d926d" title="renders the data in the Buffers depends on the GLSL version  ">Render()</a> function, depends on the Primetive Type <br/>
+ </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
@@ -230,7 +347,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 17 2013 02:29:34 for Luna by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Oct 17 2013 19:40:30 for Luna by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

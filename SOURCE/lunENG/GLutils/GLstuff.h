@@ -31,7 +31,6 @@
 #pragma once
 
 #include <string>
-#include <SDL.h>
 
 using namespace std;
 

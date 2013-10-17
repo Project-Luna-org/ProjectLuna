@@ -48,7 +48,6 @@
     <ClCompile Include="lunENG\input\keys.cpp">
       <Filter>input</Filter>
     </ClCompile>
-    <ClCompile Include="lunENG\shaderToy.cpp" />
     <ClCompile Include="lunENG\core\renderer.cpp">
       <Filter>core</Filter>
     </ClCompile>
@@ -63,6 +62,9 @@
     </ClCompile>
     <ClCompile Include="lunENG\modules\freecam.cpp">
       <Filter>modules</Filter>
+    </ClCompile>
+    <ClCompile Include="lunENG\shared\OBJparser.cpp">
+      <Filter>shared</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -93,7 +95,6 @@
     <ClInclude Include="lunENG\input\keys.h">
       <Filter>input</Filter>
     </ClInclude>
-    <ClInclude Include="lunENG\shaderToy.h" />
     <ClInclude Include="lunENG\core\renderer.h">
       <Filter>core</Filter>
     </ClInclude>
@@ -109,6 +110,9 @@
     </ClInclude>
     <ClInclude Include="lunENG\modules\freecam.h">
       <Filter>modules</Filter>
+    </ClInclude>
+    <ClInclude Include="lunENG\shared\OBJparser.h">
+      <Filter>shared</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

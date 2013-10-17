@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -90,17 +91,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>manages a sprite <br/>
+  
+<a href="#details">More...</a></p>
+
 <p><a href="sprites_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsprites.html">sprites</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">loads the shaders needed for a sprite blit operation <br/>
+  <a href="classsprites.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>manages a sprite </p>
+<p><br/>
+ </p>
+<p>it is clever to make one instance of this class and use it to dieplay evry sprite</p>
+<p><br/>
+ this module expects the "through shader" in the shader directory. <br/>
+ it means you must have setuped the DATAfolder variable properly to your DATA folder <br/>
+ than you must have setuped the renderver variable to 1,2 or 3 to chose the GLSL version <br/>
+ and you must have, depends on the setuped GLSL version, the proper folder with the <br/>
+ through.vert and through.frag shaders <br/>
+ </p>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 17 2013 02:29:34 for Luna by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Oct 17 2013 19:40:30 for Luna by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

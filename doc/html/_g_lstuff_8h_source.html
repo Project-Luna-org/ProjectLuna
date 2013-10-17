@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -109,30 +110,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;SDL.h&gt;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="_g_lstuff_8cpp.html#a2fc7b831713fd207bbe31130d88a4f5d">loadTexture</a>(<span class="keywordtype">string</span> filename);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="_g_lstuff_8cpp.html#aacf4a1537bbf6bc0bf6cf3855ff0d151">createTexture</a>(<span class="keywordtype">int</span> w,<span class="keywordtype">int</span> h, <span class="keywordtype">bool</span> isDepth=<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="_g_lstuff_8cpp.html#a2fc7b831713fd207bbe31130d88a4f5d">loadTexture</a>(<span class="keywordtype">string</span> filename);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="_g_lstuff_8cpp.html#a11a7f77289fdafe25eee32e5fdbc9f58">createTexture</a>(<span class="keywordtype">int</span> w,<span class="keywordtype">int</span> h);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_g_lstuff_8cpp.html#ae8b050fc7b1d070994fbaf0a8f809875">TraceError</a>();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_g_lstuff_8cpp.html#aacfdb0028b395f7d6ac8790856eb5df3">CheckFramebufferStatus</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_g_lstuff_8cpp.html#ae8b050fc7b1d070994fbaf0a8f809875">TraceError</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_g_lstuff_8cpp.html#aacfdb0028b395f7d6ac8790856eb5df3">CheckFramebufferStatus</a>();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="ttc" id="_g_lstuff_8cpp_html_a2fc7b831713fd207bbe31130d88a4f5d"><div class="ttname"><a href="_g_lstuff_8cpp.html#a2fc7b831713fd207bbe31130d88a4f5d">loadTexture</a></div><div class="ttdeci">unsigned int loadTexture(string filename)</div><div class="ttdoc">loads a texture from a file up to the graphicscard and returns its index   </div><div class="ttdef"><b>Definition:</b> GLstuff.cpp:40</div></div>
-<div class="ttc" id="_g_lstuff_8cpp_html_aacf4a1537bbf6bc0bf6cf3855ff0d151"><div class="ttname"><a href="_g_lstuff_8cpp.html#aacf4a1537bbf6bc0bf6cf3855ff0d151">createTexture</a></div><div class="ttdeci">unsigned int createTexture(int w, int h, bool isDepth=false)</div><div class="ttdoc">loads a empty texture up to the graphicscard and returns its index   </div><div class="ttdef"><b>Definition:</b> GLstuff.cpp:147</div></div>
-<div class="ttc" id="_g_lstuff_8cpp_html_aacfdb0028b395f7d6ac8790856eb5df3"><div class="ttname"><a href="_g_lstuff_8cpp.html#aacfdb0028b395f7d6ac8790856eb5df3">CheckFramebufferStatus</a></div><div class="ttdeci">void CheckFramebufferStatus()</div><div class="ttdoc">checks if an OpenGL FrameBuffer error appears, if so execute the error() funktion   ...</div><div class="ttdef"><b>Definition:</b> GLstuff.cpp:129</div></div>
-<div class="ttc" id="_g_lstuff_8cpp_html_ae8b050fc7b1d070994fbaf0a8f809875"><div class="ttname"><a href="_g_lstuff_8cpp.html#ae8b050fc7b1d070994fbaf0a8f809875">TraceError</a></div><div class="ttdeci">void TraceError()</div><div class="ttdoc">checks if an OpenGL general error appears, if so execute the error() funktion   </div><div class="ttdef"><b>Definition:</b> GLstuff.cpp:109</div></div>
+<div class="ttc" id="_g_lstuff_8cpp_html_a2fc7b831713fd207bbe31130d88a4f5d"><div class="ttname"><a href="_g_lstuff_8cpp.html#a2fc7b831713fd207bbe31130d88a4f5d">loadTexture</a></div><div class="ttdeci">unsigned int loadTexture(string filename)</div><div class="ttdoc">loads a texture from a file up to the graphicscard and returns its index   </div><div class="ttdef"><b>Definition:</b> GLstuff.cpp:59</div></div>
+<div class="ttc" id="_g_lstuff_8cpp_html_aacfdb0028b395f7d6ac8790856eb5df3"><div class="ttname"><a href="_g_lstuff_8cpp.html#aacfdb0028b395f7d6ac8790856eb5df3">CheckFramebufferStatus</a></div><div class="ttdeci">void CheckFramebufferStatus()</div><div class="ttdoc">checks if an OpenGL FrameBuffer error appears, if so execute the error() funktion   ...</div><div class="ttdef"><b>Definition:</b> GLstuff.cpp:148</div></div>
+<div class="ttc" id="_g_lstuff_8cpp_html_a11a7f77289fdafe25eee32e5fdbc9f58"><div class="ttname"><a href="_g_lstuff_8cpp.html#a11a7f77289fdafe25eee32e5fdbc9f58">createTexture</a></div><div class="ttdeci">unsigned int createTexture(int w, int h)</div><div class="ttdoc">loads a empty texture up to the graphicscard and returns its index   </div><div class="ttdef"><b>Definition:</b> GLstuff.cpp:166</div></div>
+<div class="ttc" id="_g_lstuff_8cpp_html_ae8b050fc7b1d070994fbaf0a8f809875"><div class="ttname"><a href="_g_lstuff_8cpp.html#ae8b050fc7b1d070994fbaf0a8f809875">TraceError</a></div><div class="ttdeci">void TraceError()</div><div class="ttdoc">checks if an OpenGL general error appears, if so execute the error() funktion   </div><div class="ttdef"><b>Definition:</b> GLstuff.cpp:128</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 17 2013 02:29:34 for Luna by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Oct 17 2013 19:40:30 for Luna by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

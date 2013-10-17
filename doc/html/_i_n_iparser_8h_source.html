@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -87,74 +88,85 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">INIparser.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_i_n_iparser_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// ver 1.0</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// this parser is </span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//                  CASE SENSITIVE</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// and </span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//                  only for one VALUE per KEYNAME</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<a href="_i_n_iparser_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* $Id: INIparser.h </span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Copyright (C) 2013 Kirill Kranz</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">  This source is free software; you can redistribute it and/or modify it under</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">  the terms of the GNU General Public License as published by the Free</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">  Software Foundation; either version 2 of the License, or (at your option)</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">  any later version.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">  This code is distributed in the hope that it will be useful, but WITHOUT ANY</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">  WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">  FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">  details.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">  A copy of the GNU General Public License is available on the World Wide Web</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">  at &lt;http://www.gnu.org/copyleft/gpl.html&gt;. You can also obtain it by writing</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">  to the Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston,</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">  MA 02111-1307, USA.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_i_n_iparser.html">   21</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_i_n_iparser.html">INIparser</a></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="struct_i_n_iparser_1_1_entry.html">   25</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_i_n_iparser_1_1_entry.html">Entry</a></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    {</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="struct_i_n_iparser_1_1_entry.html#ada917b41aa81d4a6d4d19c43ab168e86">   27</a></span>&#160;        <span class="keywordtype">string</span> <a class="code" href="struct_i_n_iparser_1_1_entry.html#ada917b41aa81d4a6d4d19c43ab168e86">keyname</a>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="struct_i_n_iparser_1_1_entry.html#a434e7625c5b87708b1f021cbd2479f0b">   28</a></span>&#160;        <span class="keywordtype">string</span> <a class="code" href="struct_i_n_iparser_1_1_entry.html#a434e7625c5b87708b1f021cbd2479f0b">value</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    };</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="struct_i_n_iparser_1_1_section.html">   31</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_i_n_iparser_1_1_section.html">Section</a></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    {</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="struct_i_n_iparser_1_1_section.html#a2cf2edc366ebb3b1331ed102035c972f">   33</a></span>&#160;        <span class="keywordtype">string</span> <a class="code" href="struct_i_n_iparser_1_1_section.html#a2cf2edc366ebb3b1331ed102035c972f">SectionName</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="struct_i_n_iparser_1_1_section.html#a103e24850338956aa0492286dd30aa77">   34</a></span>&#160;        <a class="code" href="struct_i_n_iparser_1_1_entry.html">Entry</a>* <a class="code" href="struct_i_n_iparser_1_1_section.html#a103e24850338956aa0492286dd30aa77">Entries</a>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="struct_i_n_iparser_1_1_section.html#a9fa7f591707d7e39ae13f615e31cf0aa">   35</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="struct_i_n_iparser_1_1_section.html#a9fa7f591707d7e39ae13f615e31cf0aa">numEntries</a>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    };</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_i_n_iparser.html#a65b9896d37f1226661759f10f2623a68">   39</a></span>&#160;    <a class="code" href="struct_i_n_iparser_1_1_section.html">Section</a>* <a class="code" href="class_i_n_iparser.html#a65b9896d37f1226661759f10f2623a68">Sections</a>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_i_n_iparser.html#a56eaa97de79406d3b246be4f3ed0f22e">   40</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_i_n_iparser.html#a56eaa97de79406d3b246be4f3ed0f22e">numSections</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">bool</span> loadINI(<span class="keywordtype">string</span> filename);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">string</span> getKeyValue(<span class="keywordtype">string</span> section, <span class="keywordtype">string</span> keyname);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> close();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">string</span> LineType(<span class="keywordtype">string</span> s);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">string</span> returnSection(<span class="keywordtype">string</span> s);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="struct_i_n_iparser_1_1_entry.html">Entry</a> returnEntry(<span class="keywordtype">string</span> s);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_i_n_iparser.html">   49</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_i_n_iparser.html">INIparser</a></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
-<div class="ttc" id="struct_i_n_iparser_1_1_section_html_a2cf2edc366ebb3b1331ed102035c972f"><div class="ttname"><a href="struct_i_n_iparser_1_1_section.html#a2cf2edc366ebb3b1331ed102035c972f">INIparser::Section::SectionName</a></div><div class="ttdeci">string SectionName</div><div class="ttdef"><b>Definition:</b> INIparser.h:33</div></div>
-<div class="ttc" id="struct_i_n_iparser_1_1_entry_html_ada917b41aa81d4a6d4d19c43ab168e86"><div class="ttname"><a href="struct_i_n_iparser_1_1_entry.html#ada917b41aa81d4a6d4d19c43ab168e86">INIparser::Entry::keyname</a></div><div class="ttdeci">string keyname</div><div class="ttdef"><b>Definition:</b> INIparser.h:27</div></div>
-<div class="ttc" id="class_i_n_iparser_html_a65b9896d37f1226661759f10f2623a68"><div class="ttname"><a href="class_i_n_iparser.html#a65b9896d37f1226661759f10f2623a68">INIparser::Sections</a></div><div class="ttdeci">Section * Sections</div><div class="ttdef"><b>Definition:</b> INIparser.h:39</div></div>
-<div class="ttc" id="struct_i_n_iparser_1_1_section_html_a9fa7f591707d7e39ae13f615e31cf0aa"><div class="ttname"><a href="struct_i_n_iparser_1_1_section.html#a9fa7f591707d7e39ae13f615e31cf0aa">INIparser::Section::numEntries</a></div><div class="ttdeci">int numEntries</div><div class="ttdef"><b>Definition:</b> INIparser.h:35</div></div>
-<div class="ttc" id="struct_i_n_iparser_1_1_section_html_a103e24850338956aa0492286dd30aa77"><div class="ttname"><a href="struct_i_n_iparser_1_1_section.html#a103e24850338956aa0492286dd30aa77">INIparser::Section::Entries</a></div><div class="ttdeci">Entry * Entries</div><div class="ttdef"><b>Definition:</b> INIparser.h:34</div></div>
-<div class="ttc" id="class_i_n_iparser_html"><div class="ttname"><a href="class_i_n_iparser.html">INIparser</a></div><div class="ttdef"><b>Definition:</b> INIparser.h:21</div></div>
-<div class="ttc" id="struct_i_n_iparser_1_1_entry_html_a434e7625c5b87708b1f021cbd2479f0b"><div class="ttname"><a href="struct_i_n_iparser_1_1_entry.html#a434e7625c5b87708b1f021cbd2479f0b">INIparser::Entry::value</a></div><div class="ttdeci">string value</div><div class="ttdef"><b>Definition:</b> INIparser.h:28</div></div>
-<div class="ttc" id="class_i_n_iparser_html_a56eaa97de79406d3b246be4f3ed0f22e"><div class="ttname"><a href="class_i_n_iparser.html#a56eaa97de79406d3b246be4f3ed0f22e">INIparser::numSections</a></div><div class="ttdeci">int numSections</div><div class="ttdef"><b>Definition:</b> INIparser.h:40</div></div>
-<div class="ttc" id="struct_i_n_iparser_1_1_entry_html"><div class="ttname"><a href="struct_i_n_iparser_1_1_entry.html">INIparser::Entry</a></div><div class="ttdef"><b>Definition:</b> INIparser.h:25</div></div>
-<div class="ttc" id="struct_i_n_iparser_1_1_section_html"><div class="ttname"><a href="struct_i_n_iparser_1_1_section.html">INIparser::Section</a></div><div class="ttdef"><b>Definition:</b> INIparser.h:31</div></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="class_i_n_iparser.html">INIparser</a>(<span class="keywordtype">string</span> filename);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;   ~<a class="code" href="class_i_n_iparser.html">INIparser</a>();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">string</span> getKeyValue(<span class="keywordtype">string</span> section, <span class="keywordtype">string</span> keyname);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">struct </span>Entry</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordtype">string</span> keyname;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordtype">string</span> value;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    };</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keyword">struct </span>Section</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordtype">string</span> SectionName;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        Entry* Entries;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordtype">int</span> numEntries;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    };</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    Section* Sections;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">int</span> numSections;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">string</span> LineType(<span class="keywordtype">string</span> s);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">string</span> returnSection(<span class="keywordtype">string</span> s);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    Entry returnEntry(<span class="keywordtype">string</span> s);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;};</div>
+<div class="ttc" id="class_i_n_iparser_html"><div class="ttname"><a href="class_i_n_iparser.html">INIparser</a></div><div class="ttdoc">Parse an INI file  </div><div class="ttdef"><b>Definition:</b> INIparser.h:49</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 17 2013 02:29:34 for Luna by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Oct 17 2013 19:40:30 for Luna by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

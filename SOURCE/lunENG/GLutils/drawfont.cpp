@@ -1,3 +1,22 @@
+/* $Id: drawfont.cpp
+   Copyright (C) 2013 Kirill Kranz
+
+  This source is free software; you can redistribute it and/or modify it under
+  the terms of the GNU General Public License as published by the Free
+  Software Foundation; either version 2 of the License, or (at your option)
+  any later version.
+
+  This code is distributed in the hope that it will be useful, but WITHOUT ANY
+  WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+  FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
+  details.
+
+  A copy of the GNU General Public License is available on the World Wide Web
+  at <http://www.gnu.org/copyleft/gpl.html>. You can also obtain it by writing
+  to the Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+  MA 02111-1307, USA.
+*/
+
 #define NO_SDL_GLEXT
 
 #include "../osSetup.h"
@@ -147,42 +166,9 @@ void drawfont::glTextOut(int x, int y, string txt, Uint32 color)
 
          
 
-	/*
-		unsigned int PointsVBO = 0;
-		unsigned int UVsVBO = 0;
 
-		
-
-		glGenBuffers (1, &PointsVBO);
-		glBindBuffer (GL_ARRAY_BUFFER, PointsVBO);
-		glBufferData (GL_ARRAY_BUFFER,  12 * sizeof (float), &v, GL_STATIC_DRAW);
-
-
-		glGenBuffers (1, &UVsVBO);
-		glBindBuffer (GL_ARRAY_BUFFER, UVsVBO);
-		glBufferData (GL_ARRAY_BUFFER,  8 * sizeof (float), &t, GL_STATIC_DRAW);
-		
-		
-		
-
-		unsigned int vao = 0;
-		glGenVertexArrays (1, &vao);
-		glBindVertexArray (vao);
-		glEnableVertexAttribArray (0);
-		glBindBuffer (GL_ARRAY_BUFFER, PointsVBO);
-		glVertexAttribPointer (0, 3, GL_FLOAT, GL_FALSE, 0, (GLubyte*)NULL);
-
-		glEnableVertexAttribArray (1);
-		glBindBuffer (GL_ARRAY_BUFFER, UVsVBO);
-		glVertexAttribPointer (1, 2, GL_FLOAT, GL_FALSE, 0, (GLubyte*)NULL);
-
-		*/
-
-
-	
-
-	renderer* fontrenderer =  new renderer(GL_STREAM_DRAW,GL_TRIANGLE_FAN,4,FontShader->prog);
-
+	renderer* fontrenderer =  new renderer(GL_STREAM_DRAW,GL_TRIANGLE_FAN,FontShader->prog);
+	fontrenderer->setNumVertex(4);
 	fontrenderer->LoadPoints(v,12);
 	fontrenderer->LoadTextCoords(t,8);
 
@@ -200,14 +186,6 @@ void drawfont::glTextOut(int x, int y, string txt, Uint32 color)
 		mat4 matrix = ProjMatrix;
 		int matrix_location = glGetUniformLocation (FontShader->prog, "matrix");
 		glUniformMatrix4fv (matrix_location, 1, GL_FALSE, value_ptr(matrix));
-
-
-		
-		/*
-	glBindVertexArray (vao);
-	glDrawArrays (GL_TRIANGLE_FAN, 0, 4);
-	*/
-
 
 
 
@@ -229,12 +207,6 @@ void drawfont::glTextOut(int x, int y, string txt, Uint32 color)
 	fontrenderer->~renderer();
 
 
-	/*
-	glDeleteVertexArrays(1,&vao);
-
-	glDeleteBuffers(1,&PointsVBO);
-	glDeleteBuffers(1,&UVsVBO);
-	*/
 
 	
 }

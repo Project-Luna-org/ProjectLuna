@@ -11,6 +11,5 @@ var searchData=
   ['getpixel32',['getpixel32',['../_s_d_lgraph_8cpp.html#aeed9ff8baa74efe2f967327b020de660',1,'getpixel32(SDL_Surface *surface, int x, int y):&#160;SDLgraph.cpp'],['../_s_d_lgraph_8h.html#aeed9ff8baa74efe2f967327b020de660',1,'getpixel32(SDL_Surface *surface, int x, int y):&#160;SDLgraph.cpp']]],
   ['getrgb32',['GetRGB32',['../_s_d_lgraph_8cpp.html#a0439f798ac3b66ac0aeae37438043db9',1,'GetRGB32(unsigned int c, unsigned char &amp;r, unsigned char &amp;g, unsigned char &amp;b):&#160;SDLgraph.cpp'],['../_s_d_lgraph_8h.html#a0439f798ac3b66ac0aeae37438043db9',1,'GetRGB32(unsigned int c, unsigned char &amp;r, unsigned char &amp;g, unsigned char &amp;b):&#160;SDLgraph.cpp']]],
   ['getrgba32',['GetRGBA32',['../_s_d_lgraph_8cpp.html#aa60d165d97505e6a18ac597942ac3b48',1,'GetRGBA32(unsigned int c, unsigned char &amp;r, unsigned char &amp;g, unsigned char &amp;b, unsigned char &amp;a):&#160;SDLgraph.cpp'],['../_s_d_lgraph_8h.html#aa60d165d97505e6a18ac597942ac3b48',1,'GetRGBA32(unsigned int c, unsigned char &amp;r, unsigned char &amp;g, unsigned char &amp;b, unsigned char &amp;a):&#160;SDLgraph.cpp']]],
-  ['gfxrawtonmap',['gfxRawToNMap',['../shared_8cpp.html#a96e2d395d0b0453a45dda0ca8ed42556',1,'shared.cpp']]],
   ['gltextout',['glTextOut',['../classdrawfont.html#a2fb3b3fe718e8ff4b67edc855d8a970f',1,'drawfont']]]
 ];

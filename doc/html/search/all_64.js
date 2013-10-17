@@ -7,6 +7,5 @@ var searchData=
   ['drawfont',['drawfont',['../classdrawfont.html',1,'drawfont'],['../classdrawfont.html#a98c13fa57de261d07bbe0c016509de2d',1,'drawfont::drawfont()']]],
   ['drawfont_2ecpp',['drawfont.cpp',['../drawfont_8cpp.html',1,'']]],
   ['drawfont_2eh',['drawfont.h',['../drawfont_8h.html',1,'']]],
-  ['drawquad',['drawQuad',['../shader_toy_8cpp.html#a37fbf7a86d2a21031f63ac6f9eade552',1,'drawQuad():&#160;shaderToy.cpp'],['../shader_toy_8h.html#a37fbf7a86d2a21031f63ac6f9eade552',1,'drawQuad():&#160;shaderToy.cpp']]],
   ['drawsprite',['drawSprite',['../classsprites.html#ac519f46ba21f9b288282fab367c3c34a',1,'sprites']]]
 ];

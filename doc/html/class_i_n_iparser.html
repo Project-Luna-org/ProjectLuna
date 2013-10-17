@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -83,43 +84,66 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="class_i_n_iparser-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">INIparser Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Parse an INI file<br/>
+  
+ <a href="class_i_n_iparser.html#details">More...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_i_n_iparser_1_1_entry.html">Entry</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_i_n_iparser_1_1_section.html">Section</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:afc1577f931e908fc2b157213814699de"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_n_iparser.html#afc1577f931e908fc2b157213814699de">loadINI</a> (string filename)</td></tr>
-<tr class="separator:afc1577f931e908fc2b157213814699de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b716574c4c72dbbb69ce3ae4e72a5c4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_n_iparser.html#a4b716574c4c72dbbb69ce3ae4e72a5c4">INIparser</a> (string filename)</td></tr>
+<tr class="memdesc:a4b716574c4c72dbbb69ce3ae4e72a5c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse an INI file<br/>
+  <a href="#a4b716574c4c72dbbb69ce3ae4e72a5c4">More...</a><br/></td></tr>
+<tr class="separator:a4b716574c4c72dbbb69ce3ae4e72a5c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1db6279aa05d436e15ba2b1f1ec9387"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_n_iparser.html#ab1db6279aa05d436e15ba2b1f1ec9387">~INIparser</a> ()</td></tr>
+<tr class="memdesc:ab1db6279aa05d436e15ba2b1f1ec9387"><td class="mdescLeft">&#160;</td><td class="mdescRight">clean up<br/>
+  <a href="#ab1db6279aa05d436e15ba2b1f1ec9387">More...</a><br/></td></tr>
+<tr class="separator:ab1db6279aa05d436e15ba2b1f1ec9387"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8162121009fccc3411573cdb4bfd9888"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_n_iparser.html#a8162121009fccc3411573cdb4bfd9888">getKeyValue</a> (string section, string keyname)</td></tr>
+<tr class="memdesc:a8162121009fccc3411573cdb4bfd9888"><td class="mdescLeft">&#160;</td><td class="mdescRight">get a VALUE by a keyname of a give section<br/>
+  <a href="#a8162121009fccc3411573cdb4bfd9888">More...</a><br/></td></tr>
 <tr class="separator:a8162121009fccc3411573cdb4bfd9888"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c19a9cd81241581088c75dd2f777e25"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_n_iparser.html#a0c19a9cd81241581088c75dd2f777e25">close</a> ()</td></tr>
-<tr class="separator:a0c19a9cd81241581088c75dd2f777e25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a65b9896d37f1226661759f10f2623a68"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_i_n_iparser_1_1_section.html">Section</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_n_iparser.html#a65b9896d37f1226661759f10f2623a68">Sections</a></td></tr>
-<tr class="separator:a65b9896d37f1226661759f10f2623a68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56eaa97de79406d3b246be4f3ed0f22e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_n_iparser.html#a56eaa97de79406d3b246be4f3ed0f22e">numSections</a></td></tr>
-<tr class="separator:a56eaa97de79406d3b246be4f3ed0f22e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a0c19a9cd81241581088c75dd2f777e25"></a>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Parse an INI file</p>
+<p><br/>
+ </p>
+<p>this Parser is CASE SENSITIVE </p>
+<p><br/>
+ only ONE VALUE per KEYNAME supported </p>
+<p><br/>
+ </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a4b716574c4c72dbbb69ce3ae4e72a5c4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void INIparser::close </td>
+          <td class="memname">INIparser::INIparser </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parse an INI file<br/>
+ </p>
+
+</div>
+</div>
+<a class="anchor" id="ab1db6279aa05d436e15ba2b1f1ec9387"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">INIparser::~INIparser </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -127,8 +151,12 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>clean up<br/>
+ </p>
+
 </div>
 </div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a8162121009fccc3411573cdb4bfd9888"></a>
 <div class="memitem">
 <div class="memproto">
@@ -153,46 +181,13 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a class="anchor" id="afc1577f931e908fc2b157213814699de"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool INIparser::loadINI </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>filename</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a56eaa97de79406d3b246be4f3ed0f22e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int INIparser::numSections</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a65b9896d37f1226661759f10f2623a68"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="struct_i_n_iparser_1_1_section.html">Section</a>* INIparser::Sections</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>get a VALUE by a keyname of a give section<br/>
+ </p>
+<p>this Parser is CASE SENSITIVE </p>
+<p><br/>
+ the errors are handeled properly </p>
+<p><br/>
+ </p>
 
 </div>
 </div>
@@ -203,7 +198,7 @@ Public Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 17 2013 02:29:34 for Luna by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Oct 17 2013 19:40:30 for Luna by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

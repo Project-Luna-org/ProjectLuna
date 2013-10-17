@@ -1,3 +1,30 @@
+/* $Id: main.cpp
+   Copyright (C) 2013 Kirill Kranz
+
+  This source is free software; you can redistribute it and/or modify it under
+  the terms of the GNU General Public License as published by the Free
+  Software Foundation; either version 2 of the License, or (at your option)
+  any later version.
+
+  This code is distributed in the hope that it will be useful, but WITHOUT ANY
+  WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+  FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
+  details.
+
+  A copy of the GNU General Public License is available on the World Wide Web
+  at <http://www.gnu.org/copyleft/gpl.html>. You can also obtain it by writing
+  to the Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+  MA 02111-1307, USA.
+*/
+
+
+/**
+ * @file main.cpp
+ *
+ * @brief      Program Entry Point <p/> <br/>
+ */
+
+
 #define NO_SDL_GLEXT
 
 #include "../osSetup.h"
@@ -37,7 +64,7 @@
 #include "../shared/shared.h"
 #include "../modules/freecam.h"
 #include "../modules/terrain.h"
-#include "../shaderToy.h"
+#include "../shared/OBJparser.h"
 
 
 using namespace std;
@@ -57,9 +84,9 @@ sprites* aSprite=NULL;
 int main(int argc, char** argv)
 {
 	
-	CreateLogFile();
- 
 	
+	CreateLogFile();
+
 	srand((unsigned int) time(NULL));
 
 	GetEngineStartupConfig();
@@ -68,8 +95,6 @@ int main(int argc, char** argv)
     if ( SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER) != 0 ) error("Unable to initialize SDL2: " + (string) SDL_GetError());
 
  
-
-
 	if (rendererver == 1)
 	{
 		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION,2);
@@ -129,13 +154,6 @@ int main(int argc, char** argv)
 	log("OpenGL version "+pcharstr((unsigned char*)glVersion));   
     
 
-		
-    GLint major,minor;
-    glGetIntegerv(GL_MAJOR_VERSION, &major);
-    glGetIntegerv(GL_MINOR_VERSION, &minor);
-	//if (major<3) error("OpenGL version 3.3 not supported");
-	//if (minor<3) error("OpenGL version 3.3 not supported");
-
 	
 	
 	int flags=IMG_INIT_JPG | IMG_INIT_PNG;
@@ -161,17 +179,15 @@ int main(int argc, char** argv)
 	//////////////////////////////////////////////////////////////////////////////////////
 
 	
-		//	initQuad();
-
+	/// TERRAIN SETUP
 			unsigned int myTerrainTexture = loadTexture(DATAfolder+"graph/texture.jpg");
 
 			SDL_Surface* testIMG;
 			testIMG = LoadIMG(DATAfolder+"graph/highmap.jpg");
 
-			//SDL_Surface* testNormal=calculateNormalMap(testIMG);
 
 
-			Terrain* myTerrain = new Terrain(100,4);
+			Terrain* myTerrain = new Terrain(500,4);
 			myTerrain->LoadHeightMap(testIMG);
 	
 
@@ -183,16 +199,50 @@ int main(int argc, char** argv)
 			if (rendererver == 3)
 			 terrainShader = new shader(DATAfolder+"shader/4.3/through.vert", DATAfolder+"shader/4.3/through.frag");
     
-			renderer* terrainRenderer = new renderer(GL_STATIC_DRAW, GL_TRIANGLES,myTerrain->numVertex,terrainShader->prog);
+			renderer* terrainRenderer = new renderer(GL_STATIC_DRAW, GL_TRIANGLES,terrainShader->prog);
+			terrainRenderer->setNumVertex(myTerrain->numVertex);
 
 			terrainRenderer->LoadPoints(&myTerrain->PositionBuffer[0],myTerrain->numVertex);
 			terrainRenderer->LoadTextCoords(&myTerrain->TextureBuffer[0],myTerrain->numVertex);
 
-
+			myTerrain->~Terrain();
+			
+			
+	/// CAMERA SETUP			
 			freecam* myCam = new freecam();
 
 
+
+
+
+	/// OBJ SETUP
+
+			OBJparser* myOBJ = new OBJparser(DATAfolder+"/models/sphere.obj");
+			
+			shader* objShader;
+			if (rendererver == 1)
+			 objShader = new shader(DATAfolder+"shader/2.1/through.vert", DATAfolder+"shader/2.1/through.frag");
+			if (rendererver == 2)
+			 objShader = new shader(DATAfolder+"shader/3.2/through.vert", DATAfolder+"shader/3.2/through.frag");
+			if (rendererver == 3)
+			 objShader = new shader(DATAfolder+"shader/4.3/through.vert", DATAfolder+"shader/4.3/through.frag");
+
+			renderer* objRenderer = new renderer(GL_STATIC_DRAW, GL_TRIANGLES,objShader->prog);
+
+			objRenderer->setNumVertex(myOBJ->numVertex);
+
+			objRenderer->LoadPoints(&myOBJ->PositionBuffer[0],myOBJ->numPositions);
+			objRenderer->LoadTextCoords(&myOBJ->TextureCoordBuffer[0],myOBJ->numTextureCoords);
+
+			myOBJ->~OBJparser();
+
+
+
 	//////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
 
 
 	SDL_ShowCursor(showMouse);
@@ -272,15 +322,15 @@ int main(int argc, char** argv)
 	
 	
 		
-		// drawQuad();
 		// aSprite->drawSprite(0,0,testNormal);
 
 			SDL_WarpMouseInWindow(SDLwindow,screenwidth / 2,screenheight / 2);
 
+
+/// TERRAIN
+
 		glUseProgram(terrainShader->prog);
 		glDisable(GL_LIGHTING);
-
-
 
 		    glBindTexture( GL_TEXTURE_2D,myTerrainTexture);
 
@@ -293,11 +343,33 @@ int main(int argc, char** argv)
 		int matrix_location = glGetUniformLocation (terrainShader->prog, "matrix");
 		glUniformMatrix4fv (matrix_location, 1, GL_FALSE, value_ptr(matrix));
 
+	
 
+	//	terrainRenderer->Render();
 		
 
-		terrainRenderer->Render();
-		
+
+/// OBJECT
+
+		glUseProgram(objShader->prog);
+		glDisable(GL_LIGHTING);
+
+		glBindTexture( GL_TEXTURE_2D,myTerrainTexture);
+
+
+
+		myCam->cameraMatrix = mat4(1);
+		myCam->CameraControl();
+		myCam->CameraTranslate();
+
+
+
+		matrix = ProjMatrix * myCam->cameraMatrix;
+		matrix_location = glGetUniformLocation (objShader->prog, "matrix");
+		glUniformMatrix4fv (matrix_location, 1, GL_FALSE, value_ptr(matrix));
+
+		objRenderer->Render();
+
 
 	//////////////////////////////////////////////////////////////////////////////////////		
 
@@ -327,10 +399,12 @@ int main(int argc, char** argv)
 
 	//////////////////////////////////////////////////////////////////////////////////////	
 
-	 //	closeQuad();
-
 	terrainRenderer->~renderer();
 	terrainShader->~shader();
+	delete myCam;
+
+	objShader->~shader();
+	objRenderer->~renderer();
 
 	//////////////////////////////////////////////////////////////////////////////////////	
 

@@ -1,6 +1,7 @@
 var searchData=
 [
   ['s2ws',['s2ws',['../tools_8cpp.html#aad6fe44abbb9cde538b5e84718ee3526',1,'tools.cpp']]],
+  ['setnumvertex',['setNumVertex',['../classrenderer.html#a99c1f00045cfefa9db74bee116c3e544',1,'renderer']]],
   ['shader',['shader',['../classshader.html#ab5ca45b09f11e5098da6de50c6303612',1,'shader']]],
   ['sortuint',['sortUint',['../tools_8cpp.html#a86012c840a75e9034f7c1293f8ea650a',1,'sortUint(unsigned int *&amp;arr):&#160;tools.cpp'],['../tools_8h.html#a86012c840a75e9034f7c1293f8ea650a',1,'sortUint(unsigned int *&amp;arr):&#160;tools.cpp']]],
   ['sprites',['sprites',['../classsprites.html#a62d8f5fe04966bbb91fda9fbcdb9ccfc',1,'sprites']]],

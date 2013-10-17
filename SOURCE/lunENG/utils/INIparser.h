@@ -1,11 +1,32 @@
+/* $Id: INIparser.h 
+   Copyright (C) 2013 Kirill Kranz
+
+  This source is free software; you can redistribute it and/or modify it under
+  the terms of the GNU General Public License as published by the Free
+  Software Foundation; either version 2 of the License, or (at your option)
+  any later version.
+
+  This code is distributed in the hope that it will be useful, but WITHOUT ANY
+  WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+  FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
+  details.
+
+  A copy of the GNU General Public License is available on the World Wide Web
+  at <http://www.gnu.org/copyleft/gpl.html>. You can also obtain it by writing
+  to the Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+  MA 02111-1307, USA.
+*/
 
 
-// ver 1.0
-// this parser is 
-//					CASE SENSITIVE
-// and 
-//					only for one VALUE per KEYNAME
-
+/**
+ * @file INIparser.h
+ *
+ * @brief	Parse an INI file<p/> <br/>
+ * @details    this Parser is CASE SENSITIVE <p/> <br/> 
+ *			   only ONE VALUE per KEYNAME supported <p/> <br/> 
+ *    		   
+ * @todo	   do this non CASE SENSITIVE
+ */
 
 
 #pragma once
@@ -18,9 +39,47 @@
 using namespace std;
 
 
+
+/**
+ * @brief	Parse an INI file<p/> <br/>
+ * @details    this Parser is CASE SENSITIVE <p/> <br/> 
+ *			   only ONE VALUE per KEYNAME supported <p/> <br/> 
+ *    		   
+ */
 class INIparser
 {
 public:
+
+
+/**
+ * @brief	   Parse an INI file<p/> <br/>
+ *
+ */
+	INIparser(string filename);
+
+
+/**
+ * @brief	   clean up<p/> <br/>
+ *
+ */
+   ~INIparser();
+
+
+
+/**
+ * @brief	   get a VALUE by a keyname of a give section<p/> <br/>
+ * @details    this Parser is CASE SENSITIVE <p/> <br/> 
+ *			   the errors are handeled properly <p/> <br/> 
+ *
+ */
+	string getKeyValue(string section, string keyname);
+
+
+
+
+
+
+private:
 
 	struct Entry
 	{
@@ -38,14 +97,6 @@ public:
 
 	Section* Sections;
 	int numSections;
-
-	bool loadINI(string filename);
-
-	string getKeyValue(string section, string keyname);
-
-	void close();
-
-private:
 
 	string LineType(string s);
 	string returnSection(string s);

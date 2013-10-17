@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -87,17 +88,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">sprites Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>loads the shaders needed for a sprite blit operation <br/>
+  
+ <a href="classsprites.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a62d8f5fe04966bbb91fda9fbcdb9ccfc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsprites.html#a62d8f5fe04966bbb91fda9fbcdb9ccfc">sprites</a> ()</td></tr>
+<tr class="memdesc:a62d8f5fe04966bbb91fda9fbcdb9ccfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">loads the shaders needed for a sprite blit operation <br/>
+  <a href="#a62d8f5fe04966bbb91fda9fbcdb9ccfc">More...</a><br/></td></tr>
 <tr class="separator:a62d8f5fe04966bbb91fda9fbcdb9ccfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adcfb93bf068a6b76b13fa0855d95983c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsprites.html#adcfb93bf068a6b76b13fa0855d95983c">~sprites</a> ()</td></tr>
+<tr class="memdesc:adcfb93bf068a6b76b13fa0855d95983c"><td class="mdescLeft">&#160;</td><td class="mdescRight">cleans the memory of ths class  <a href="#adcfb93bf068a6b76b13fa0855d95983c">More...</a><br/></td></tr>
 <tr class="separator:adcfb93bf068a6b76b13fa0855d95983c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac519f46ba21f9b288282fab367c3c34a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsprites.html#ac519f46ba21f9b288282fab367c3c34a">drawSprite</a> (int x, int y, SDL_Surface *img)</td></tr>
+<tr class="memdesc:ac519f46ba21f9b288282fab367c3c34a"><td class="mdescLeft">&#160;</td><td class="mdescRight">draws a sprite on the given position on the display  <a href="#ac519f46ba21f9b288282fab367c3c34a">More...</a><br/></td></tr>
 <tr class="separator:ac519f46ba21f9b288282fab367c3c34a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>loads the shaders needed for a sprite blit operation </p>
+<p><br/>
+ </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a62d8f5fe04966bbb91fda9fbcdb9ccfc"></a>
 <div class="memitem">
 <div class="memproto">
@@ -110,6 +123,15 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>loads the shaders needed for a sprite blit operation <br/>
+ </p>
+<p>this module expects the "through shader" in the shader directory. <br/>
+ it means you must have setuped the DATAfolder variable properly to your DATA folder <br/>
+ than you must have setuped the renderver variable to 1,2 or 3 to chose the GLSL version <br/>
+ and you must have, depends on the setuped GLSL version, the proper folder with the <br/>
+ through.vert and through.frag shaders <br/>
+ </p>
 
 </div>
 </div>
@@ -125,6 +147,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>cleans the memory of ths class </p>
 
 </div>
 </div>
@@ -159,6 +183,19 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>draws a sprite on the given position on the display </p>
+<p>the coordinates a are: 0,0 is the left upper corner<br/>
+ and the maximum x is the screen width and the maximum y is the screen height, so the lower right corner <br/>
+</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>set the X position on the screen </td></tr>
+    <tr><td class="paramname">y</td><td>set the Y position on the screen </td></tr>
+    <tr><td class="paramname">img</td><td>a sprite in the SDL_Image </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
@@ -168,7 +205,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 17 2013 02:29:34 for Luna by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Oct 17 2013 19:40:30 for Luna by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

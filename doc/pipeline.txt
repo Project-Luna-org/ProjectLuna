@@ -1,0 +1,96 @@
+Welcome to a quick review of the render pipeline in the lunaENG.
+
+let illustrate it by displaying a .OBJ file. 
+
+Step 1:
+	
+	create a OBJparser object and initialize it.
+	
+		OBJparser* myOBJ = new OBJparser(DATAfolder+"/models/sphere.obj");
+		
+	now you have all the data you need in the memory.
+
+
+Step 2:
+	
+	setup a shader for drawing.
+	
+			shader* objShader;
+			if (rendererver == 1)
+			 objShader = new shader(DATAfolder+"shader/2.1/through.vert", DATAfolder+"shader/2.1/through.frag");
+			if (rendererver == 2)
+			 objShader = new shader(DATAfolder+"shader/3.2/through.vert", DATAfolder+"shader/3.2/through.frag");
+			if (rendererver == 3)
+			 objShader = new shader(DATAfolder+"shader/4.3/through.vert", DATAfolder+"shader/4.3/through.frag");
+	
+	for simplity use a through shader, it draws the data "as it is" by multiplying it with a single matrix (see later)
+
+	
+Step 3:
+	
+	setup a renderer for drawing
+			
+			renderer* objRenderer = new renderer(GL_STATIC_DRAW, GL_TRIANGLES,objShader->prog);
+			
+	we just pass that we wanna draw Triangles which are not modified on the fly
+		
+			objRenderer->setNumVertex(myOBJ->numVertex);
+			
+	pass the number of Vertex the renderer will draw in GL_TRIANGLES mode
+
+	
+Step 4:
+
+	pass the data to the renderer
+	
+			objRenderer->LoadPoints(&myOBJ->PositionBuffer[0],myOBJ->numPositions);
+			objRenderer->LoadTextCoords(&myOBJ->TextureCoordBuffer[0],myOBJ->numTextureCoords);
+			
+	
+Step 5:
+
+	close the .OBJ parser
+		
+			myOBJ->~OBJparser();
+		
+		
+Step 6:
+
+	now we are ready to render! so we are in the main loop on a place where the rendering should be done.
+	
+	set the shader program we loaded
+	
+		glUseProgram(objShader->prog);
+	
+	disable the light (just for testing)
+	
+		glDisable(GL_LIGHTING);
+
+	bind a texture (any texture will do)
+	
+		glBindTexture( GL_TEXTURE_2D,myTerrainTexture);
+	
+	calculate the camera matrix
+	
+			myCam->cameraMatrix = mat4(1);	// reset the matrix to identity
+			myCam->CameraControl();			// move the camera	
+			myCam->CameraTranslate();		// move the camera
+			
+	calculate and pass the global matrix to the shader
+	
+			matrix = ProjMatrix * myCam->cameraMatrix; // the projection matrix was setuped at the start of luna
+			matrix_location = glGetUniformLocation (objShader->prog, "matrix");	// get the location of the matrix from the shader
+			glUniformMatrix4fv (matrix_location, 1, GL_FALSE, value_ptr(matrix)); // send the matrix to the shader
+			
+	render!
+			objRenderer->Render();
+
+	
+Step 7: 
+		
+	Free memory
+
+		objShader->~shader();
+		objRenderer->~renderer();
+		
+		
