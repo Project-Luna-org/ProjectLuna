@@ -41,18 +41,21 @@ public:
     unsigned int width;
 	unsigned int breight;
 
+	unsigned int numVertex;
+
+	float* PositionBuffer;
+	float* TextureBuffer;
+
+
+private:
+
+
 	float HeightScale;
 	float BlockScale;
 
 
 	vec3* TerrainPositions;
 	vec2* TerrainTexture;
-
-	unsigned int numVertex;
-
-	float* PositionBuffer;
-	float* TextureBuffer;
-
 
 
 };

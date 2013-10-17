@@ -56,7 +56,7 @@ sprites* aSprite=NULL;
 
 int main(int argc, char** argv)
 {
-
+	
 	CreateLogFile();
  
 	
@@ -84,7 +84,7 @@ int main(int argc, char** argv)
 	{
 		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION,4);
 		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION,3);
-	} else error("renderer version in engine.ini is corrrupt");
+	} else error("renderer version in engine.ini is corrupt");
 
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
 	//SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_COMPATIBILITY);
@@ -163,10 +163,10 @@ int main(int argc, char** argv)
 	
 		//	initQuad();
 
-			unsigned int myTerrainTexture = loadTexture(DATAfolder+"graph/terra.jpg");
+			unsigned int myTerrainTexture = loadTexture(DATAfolder+"graph/texture.jpg");
 
 			SDL_Surface* testIMG;
-			testIMG = LoadIMG(DATAfolder+"graph/terra.jpg");
+			testIMG = LoadIMG(DATAfolder+"graph/highmap.jpg");
 
 			//SDL_Surface* testNormal=calculateNormalMap(testIMG);
 

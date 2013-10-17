@@ -19,7 +19,7 @@
 
 #include <string>
 #include <stdlib.h>
-
+#include <fstream>
 
 #include <SDL.h>
 #include <SDL_opengl.h>

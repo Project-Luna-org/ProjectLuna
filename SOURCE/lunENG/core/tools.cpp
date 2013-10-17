@@ -8,6 +8,8 @@
 #endif
 
 #include <string>
+#include <iostream>
+#include <fstream>
 #include <sstream>
 #include <stdlib.h>
 
@@ -108,20 +110,26 @@ string numstr(int i)
 	return out.str();
 }
 
-string GetDigitNumber(int dig)
+string GetDigitNumber10(int dig)
 {
 	if(dig<10)
 	{
 		return "0" + numstr(dig); 
 	}
-	/*
+	return numstr(dig);
+}
+
+string GetDigitNumber100(int dig)
+{
+	if(dig<10)
+	{
+		return "00" + numstr(dig); 
+	}
 	if((dig>=10) && (dig<100))
 	{
 		return "0" + numstr(dig);
 	}
-	*/
 	return numstr(dig);
-
 }
 
 string floatstr(float f)
@@ -190,10 +198,7 @@ void log(string Text)
   fb.close();
 }
 
-void log(int num)
-{
-	log(numstr(num));
-}
+
 
 
 
@@ -223,7 +228,7 @@ string getPathFromFullFileName(string filename)
 	return ss;
 }
 
-float myrandom()
+float floatrandom()
 {
     return rand() / static_cast<float>(RAND_MAX);
 }
@@ -231,7 +236,7 @@ float myrandom()
 int randomRange( int low, int high )
 {
     int range = high - low;
-    return static_cast<int>(myrandom() * range) + low;
+    return static_cast<int>(floatrandom() * range) + low;
 }
 
 

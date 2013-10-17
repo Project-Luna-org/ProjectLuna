@@ -2,7 +2,7 @@
 
 #include <SDL.h>
 #include <SDL_image.h>
-
+#include "../core/tools.h"
 #include "SDLgraph.h"
 
 using namespace std;
@@ -75,6 +75,7 @@ SDL_Surface* LoadIMG(string filename)
 {
 	SDL_Surface* img;
 	img = IMG_Load(filename.c_str());
+	if (!img) error("error loading "+filename);
 	img = SDL_ConvertSurfaceFormat(img,SDL_PIXELFORMAT_ARGB8888,0);
 	return img;
 }

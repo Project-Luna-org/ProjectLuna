@@ -157,4 +157,9 @@ void Terrain::LoadHeightMap(SDL_Surface* heightmap)
 			TextureBuffer[i++] = TerrainTexture[index].y;
 		}
 		
+
+
+		delete [] TerrainPositions;
+		delete [] TerrainTexture;
+
 }

@@ -144,7 +144,7 @@ void CheckFramebufferStatus()
 
 
 
-unsigned int createTexture(int w,int h, bool isDepth=false)
+unsigned int createTexture(int w,int h)
 {
 	
 	unsigned int textureID;
@@ -153,7 +153,7 @@ unsigned int createTexture(int w,int h, bool isDepth=false)
 	
 	glBindTexture(GL_TEXTURE_2D, textureID);
 
-	glTexImage2D(GL_TEXTURE_2D,0,(!isDepth ? GL_RGBA : GL_DEPTH_COMPONENT), w,h,0,(!isDepth ? GL_RGBA : GL_DEPTH_COMPONENT),GL_UNSIGNED_BYTE,NULL);
+	glTexImage2D(GL_TEXTURE_2D,0,GL_RGBA, w,h,0,GL_RGBA,GL_UNSIGNED_BYTE,NULL);
 	
 
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
