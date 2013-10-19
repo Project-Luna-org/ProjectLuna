@@ -83,13 +83,14 @@ sprites* aSprite=NULL;
 
 int main(int argc, char** argv)
 {
-	
-	
+    
+    absoluteExecutablePath = getPathFromFullFileName(pcharstring(argv[0]));
+    
 	CreateLogFile();
 
 	srand((unsigned int) time(NULL));
 
-	GetEngineStartupConfig();
+	GetEngineStartupConfig(absoluteExecutablePath);
 	
 	
     if ( SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER) != 0 ) error("Unable to initialize SDL2: " + (string) SDL_GetError());
@@ -180,14 +181,14 @@ int main(int argc, char** argv)
 
 	
 	/// TERRAIN SETUP
-			unsigned int myTerrainTexture = loadTexture(DATAfolder+"graph/texture.jpg");
+			unsigned int myTerrainTexture = loadTexture(DATAfolder+"graph/heightmap.jpg");
 
 			SDL_Surface* testIMG;
-			testIMG = LoadIMG(DATAfolder+"graph/highmap.jpg");
+			testIMG = LoadIMG(DATAfolder+"graph/heightmap.jpg");
 
-
-
-			Terrain* myTerrain = new Terrain(500,4);
+    
+    
+			Terrain* myTerrain = new Terrain(200,2);
 			myTerrain->LoadHeightMap(testIMG);
 	
 
@@ -216,7 +217,7 @@ int main(int argc, char** argv)
 
 
 	/// OBJ SETUP
-
+/*
 			OBJparser* myOBJ = new OBJparser(DATAfolder+"/models/sphere.obj");
 			
 			shader* objShader;
@@ -235,7 +236,7 @@ int main(int argc, char** argv)
 			objRenderer->LoadTextCoords(&myOBJ->TextureCoordBuffer[0],myOBJ->numTextureCoords);
 
 			myOBJ->~OBJparser();
-
+*/
 
 
 	//////////////////////////////////////////////////////////////////////////////////////
@@ -307,7 +308,12 @@ int main(int argc, char** argv)
 		// Update
 
 
-
+        if (keys::SPACEpressed)
+        {
+            vec3 cv = myCam->getCamPos();
+            
+            log("X="+floatstr(cv.x)+" Y="+floatstr(cv.y)+" Z="+floatstr(cv.z));
+        }
 
 
 		// Draw
@@ -322,7 +328,7 @@ int main(int argc, char** argv)
 	
 	
 		
-		// aSprite->drawSprite(0,0,testNormal);
+          // aSprite->drawSprite(0,0,testIMG);
 
 			SDL_WarpMouseInWindow(SDLwindow,screenwidth / 2,screenheight / 2);
 
@@ -345,12 +351,13 @@ int main(int argc, char** argv)
 
 	
 
-	//	terrainRenderer->Render();
+		terrainRenderer->Render();
 		
 
+        
 
 /// OBJECT
-
+/*
 		glUseProgram(objShader->prog);
 		glDisable(GL_LIGHTING);
 
@@ -369,7 +376,7 @@ int main(int argc, char** argv)
 		glUniformMatrix4fv (matrix_location, 1, GL_FALSE, value_ptr(matrix));
 
 		objRenderer->Render();
-
+*/
 
 	//////////////////////////////////////////////////////////////////////////////////////		
 
@@ -402,10 +409,10 @@ int main(int argc, char** argv)
 	terrainRenderer->~renderer();
 	terrainShader->~shader();
 	delete myCam;
-
+/*
 	objShader->~shader();
 	objRenderer->~renderer();
-
+*/
 	//////////////////////////////////////////////////////////////////////////////////////	
 
 

@@ -22,7 +22,6 @@
 		E0532AB8180610260062732E /* GLstuff.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0532A1D180610260062732E /* GLstuff.cpp */; };
 		E0532AB9180610260062732E /* shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0532A1F180610260062732E /* shader.cpp */; };
 		E0532ABA180610260062732E /* keys.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0532A22180610260062732E /* keys.cpp */; };
-		E0532ABB180610260062732E /* shaderToy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0532A25180610260062732E /* shaderToy.cpp */; };
 		E0532ABC180610260062732E /* INIparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0532A28180610260062732E /* INIparser.cpp */; };
 		E0532ABD180610260062732E /* SDLgraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0532A2A180610260062732E /* SDLgraph.cpp */; };
 		E0532ABE180610260062732E /* setup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0532A2C180610260062732E /* setup.cpp */; };
@@ -35,6 +34,11 @@
 		E0D2BF3A18061B7A000BD82A /* SDL2_image.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E0532AC5180610BA0062732E /* SDL2_image.framework */; };
 		E0D2BF3B18061B7D000BD82A /* SDL2_ttf.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E0532AC6180610BA0062732E /* SDL2_ttf.framework */; };
 		E0D2BF3E180620D0000BD82A /* libGLEW.1.10.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = E0532AC8180610E30062732E /* libGLEW.1.10.0.dylib */; };
+		E0F2EED81812E0FC007EEFC1 /* sprites.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0F2EED61812E0FC007EEFC1 /* sprites.cpp */; };
+		E0F2EEE31812E125007EEFC1 /* freecam.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0F2EEDA1812E125007EEFC1 /* freecam.cpp */; };
+		E0F2EEE41812E125007EEFC1 /* terrain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0F2EEDC1812E125007EEFC1 /* terrain.cpp */; };
+		E0F2EEE51812E125007EEFC1 /* OBJparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0F2EEDF1812E125007EEFC1 /* OBJparser.cpp */; };
+		E0F2EEE61812E125007EEFC1 /* shared.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0F2EEE11812E125007EEFC1 /* shared.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,8 +98,6 @@
 		E0532A22180610260062732E /* keys.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = keys.cpp; sourceTree = "<group>"; };
 		E0532A23180610260062732E /* keys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = keys.h; sourceTree = "<group>"; };
 		E0532A24180610260062732E /* osSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = osSetup.h; sourceTree = "<group>"; };
-		E0532A25180610260062732E /* shaderToy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = shaderToy.cpp; sourceTree = "<group>"; };
-		E0532A26180610260062732E /* shaderToy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shaderToy.h; sourceTree = "<group>"; };
 		E0532A28180610260062732E /* INIparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = INIparser.cpp; sourceTree = "<group>"; };
 		E0532A29180610260062732E /* INIparser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INIparser.h; sourceTree = "<group>"; };
 		E0532A2A180610260062732E /* SDLgraph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SDLgraph.cpp; sourceTree = "<group>"; };
@@ -107,6 +109,16 @@
 		E0532AC6180610BA0062732E /* SDL2_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL2_ttf.framework; sourceTree = "<group>"; };
 		E0532AC8180610E30062732E /* libGLEW.1.10.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.1.10.0.dylib; path = ../lunENG/Frameworks/osx/GLew/Lib/libGLEW.1.10.0.dylib; sourceTree = "<group>"; };
 		E0532ACD180613780062732E /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		E0F2EED61812E0FC007EEFC1 /* sprites.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sprites.cpp; sourceTree = "<group>"; };
+		E0F2EED71812E0FC007EEFC1 /* sprites.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sprites.h; sourceTree = "<group>"; };
+		E0F2EEDA1812E125007EEFC1 /* freecam.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = freecam.cpp; sourceTree = "<group>"; };
+		E0F2EEDB1812E125007EEFC1 /* freecam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = freecam.h; sourceTree = "<group>"; };
+		E0F2EEDC1812E125007EEFC1 /* terrain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = terrain.cpp; sourceTree = "<group>"; };
+		E0F2EEDD1812E125007EEFC1 /* terrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = terrain.h; sourceTree = "<group>"; };
+		E0F2EEDF1812E125007EEFC1 /* OBJparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OBJparser.cpp; sourceTree = "<group>"; };
+		E0F2EEE01812E125007EEFC1 /* OBJparser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBJparser.h; sourceTree = "<group>"; };
+		E0F2EEE11812E125007EEFC1 /* shared.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = shared.cpp; sourceTree = "<group>"; };
+		E0F2EEE21812E125007EEFC1 /* shared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shared.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,12 +232,12 @@
 		E053286C180610250062732E /* lunENG */ = {
 			isa = PBXGroup;
 			children = (
+				E0F2EED91812E125007EEFC1 /* modules */,
+				E0F2EEDE1812E125007EEFC1 /* shared */,
 				E053286D180610250062732E /* core */,
 				E0532A1A180610250062732E /* GLutils */,
 				E0532A21180610260062732E /* input */,
 				E0532A24180610260062732E /* osSetup.h */,
-				E0532A25180610260062732E /* shaderToy.cpp */,
-				E0532A26180610260062732E /* shaderToy.h */,
 				E0532A27180610260062732E /* utils */,
 			);
 			name = lunENG;
@@ -248,6 +260,8 @@
 		E0532A1A180610250062732E /* GLutils */ = {
 			isa = PBXGroup;
 			children = (
+				E0F2EED61812E0FC007EEFC1 /* sprites.cpp */,
+				E0F2EED71812E0FC007EEFC1 /* sprites.h */,
 				E0532A1B180610250062732E /* drawfont.cpp */,
 				E0532A1C180610250062732E /* drawfont.h */,
 				E0532A1D180610260062732E /* GLstuff.cpp */,
@@ -289,6 +303,28 @@
 			);
 			name = SDL2;
 			path = ../lunENG/Frameworks/osx/SDL2;
+			sourceTree = "<group>";
+		};
+		E0F2EED91812E125007EEFC1 /* modules */ = {
+			isa = PBXGroup;
+			children = (
+				E0F2EEDA1812E125007EEFC1 /* freecam.cpp */,
+				E0F2EEDB1812E125007EEFC1 /* freecam.h */,
+				E0F2EEDC1812E125007EEFC1 /* terrain.cpp */,
+				E0F2EEDD1812E125007EEFC1 /* terrain.h */,
+			);
+			path = modules;
+			sourceTree = "<group>";
+		};
+		E0F2EEDE1812E125007EEFC1 /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				E0F2EEDF1812E125007EEFC1 /* OBJparser.cpp */,
+				E0F2EEE01812E125007EEFC1 /* OBJparser.h */,
+				E0F2EEE11812E125007EEFC1 /* shared.cpp */,
+				E0F2EEE21812E125007EEFC1 /* shared.h */,
+			);
+			path = shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -392,14 +428,18 @@
 				E0532AB9180610260062732E /* shader.cpp in Sources */,
 				E0532A2F180610260062732E /* renderer.cpp in Sources */,
 				E0532AB7180610260062732E /* drawfont.cpp in Sources */,
+				E0F2EEE31812E125007EEFC1 /* freecam.cpp in Sources */,
 				E0532A2E180610260062732E /* main.cpp in Sources */,
+				E0F2EEE61812E125007EEFC1 /* shared.cpp in Sources */,
 				E0532AB8180610260062732E /* GLstuff.cpp in Sources */,
 				E0532ABD180610260062732E /* SDLgraph.cpp in Sources */,
 				E0532ABC180610260062732E /* INIparser.cpp in Sources */,
 				E0532ABE180610260062732E /* setup.cpp in Sources */,
 				E0532ABA180610260062732E /* keys.cpp in Sources */,
+				E0F2EEE51812E125007EEFC1 /* OBJparser.cpp in Sources */,
 				E0532A30180610260062732E /* tools.cpp in Sources */,
-				E0532ABB180610260062732E /* shaderToy.cpp in Sources */,
+				E0F2EED81812E0FC007EEFC1 /* sprites.cpp in Sources */,
+				E0F2EEE41812E125007EEFC1 /* terrain.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,6 +587,7 @@
 					/Users/KeyReal/Desktop/ProjectLuna/SOURCE/lunENG/Frameworks/vs2012/GLew/lib,
 					/Users/KeyReal/Desktop/ProjectLuna/SOURCE/lunENG/Frameworks/vs2012/SDL2/lib,
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -582,6 +623,7 @@
 					/Users/KeyReal/Desktop/ProjectLuna/SOURCE/lunENG/Frameworks/vs2012/GLew/lib,
 					/Users/KeyReal/Desktop/ProjectLuna/SOURCE/lunENG/Frameworks/vs2012/SDL2/lib,
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

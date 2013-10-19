@@ -18,8 +18,21 @@
 */
 
 
+#define NO_SDL_GLEXT
+
+#include "../osSetup.h"
+#ifdef OS_WIN
 #include <Windows.h>
+#endif
+
+#include <glew.h>
+#ifdef OS_OSX
+#include <OpenGL/OpenGL.h>
+#endif
+#ifdef OS_WIN
 #include <gl/GL.h>
+#include <gl/GLU.h>
+#endif
 #include <string>
 #include <stdlib.h>
 #include <fstream>
@@ -262,10 +275,10 @@ bool OBJparser::LoadOBJfile(string filename)
 
 
 
-	vertexCount = VerticesList.size();
-	textureCount = TextcoordsList.size();
-	normalCount = NormalsList.size();
-	faceCount = FacesList.size();
+	vertexCount = (unsigned int) VerticesList.size();
+	textureCount = (unsigned int) TextcoordsList.size();
+	normalCount = (unsigned int) NormalsList.size();
+	faceCount = (unsigned int) FacesList.size();
 
 
 

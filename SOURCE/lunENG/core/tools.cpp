@@ -37,7 +37,20 @@
 using namespace std;
 
 
-
+string pcharstring(char* pch)
+{
+	if (!pch) return "";
+	string s="";
+	int i=0;
+	char ch='\xFF';
+	while(ch!=0)
+	{
+		ch=pch[i];
+		if (ch!=0) s=s+ch;
+		i++;
+	}
+	return s;
+}
 
 string pcharstr(unsigned char* pch)
 {
@@ -235,6 +248,32 @@ string getPathFromFullFileName(string filename)
 		if ((ch=='/') || (ch=='\\')) break;
 		mycount--;
 	}
+    
+#ifdef OS_OSX
+    mycount--;
+ 	while (true)
+	{
+		ch = s[mycount];
+		if ((ch=='/') || (ch=='\\')) break;
+		mycount--;
+	}
+    mycount--;
+	while (true)
+	{
+		ch = s[mycount];
+		if ((ch=='/') || (ch=='\\')) break;
+		mycount--;
+	}
+    mycount--;
+	while (true)
+	{
+		ch = s[mycount];
+		if ((ch=='/') || (ch=='\\')) break;
+		mycount--;
+	}
+    
+#endif
+    
 
 	string ss="";
 	for (unsigned int i=0;i<mycount;i++)

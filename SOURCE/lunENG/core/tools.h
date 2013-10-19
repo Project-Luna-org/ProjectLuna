@@ -38,7 +38,10 @@ using namespace std;
 
 #define byte unsigned char
 
-
+/**
+ * @brief   convert a char pointer to a string  <p/> <br/>
+ */
+string pcharstring(char* pch);
 
 /**
  * @brief   convert a unsigned char pointer to a string  <p/> <br/> 

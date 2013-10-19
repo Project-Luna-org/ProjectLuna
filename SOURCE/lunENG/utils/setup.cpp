@@ -32,12 +32,14 @@ int screenheight=720;
 bool screenFullScreen=false;
 int how2showFPS=0;
 bool showMouse = true;
+string absoluteExecutablePath="";
 
 
-
-void GetEngineStartupConfig()
+void GetEngineStartupConfig(string exePath)
 {
-	INIparser* myINI = new INIparser("engine.ini");
+    
+    
+	INIparser* myINI = new INIparser(exePath+"/engine.ini");
 
 
 	rendererver = strnum(myINI->getKeyValue("CORE","renderer"));
@@ -63,7 +65,7 @@ void GetEngineStartupConfig()
 		showMouse=false;
 	} else error("engine.ini: corrupt 'showMouse' TAG !");
 
-	DATAfolder = myINI->getKeyValue("CORE","datapath");
+	DATAfolder = exePath+"/"+myINI->getKeyValue("CORE","datapath");
 	
 	if (myINI->getKeyValue("CORE","showFPS")=="onScreen")
 	{

@@ -83,11 +83,14 @@ extern int how2showFPS;
 extern bool showMouse;
 
 
-
+/**
+ * @brief   where is the executable? <p/> <br/>
+ */
+extern string absoluteExecutablePath;
 
 
 
 /**
  * @brief   Load the Confirutations from the engine.ini file <p/> <br/> 
  */
-void GetEngineStartupConfig();
+void GetEngineStartupConfig(string exePath);

@@ -22,10 +22,19 @@
 
 #define NO_SDL_GLEXT
 
+#include "../osSetup.h"
+#ifdef OS_WIN
 #include <Windows.h>
+#endif
+
 #include <glew.h>
+#ifdef OS_OSX
+#include <OpenGL/OpenGL.h>
+#endif
+#ifdef OS_WIN
 #include <gl/GL.h>
 #include <gl/GLU.h>
+#endif
 #include <string>
 #include <stdlib.h>
 #include <list>
@@ -45,7 +54,7 @@
 #include "../core/Tools.h"
 #include "freecam.h"
 #include "../core/main.h"
-#include "..\input\keys.h"
+#include "../input/keys.h"
 #include "../utils/setup.h"
 
 
@@ -55,9 +64,9 @@ using namespace glm;
 freecam::freecam()
 {
 
-	camX=100;
-	camY=10;
-	camZ=200;
+	camX=15;
+	camY=215;
+	camZ=422;
 
 	camYaw=0;
 	camPitch=0;
