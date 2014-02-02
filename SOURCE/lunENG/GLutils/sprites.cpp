@@ -54,6 +54,7 @@ using namespace std;
 using namespace glm;
 
 sprites::sprites()
+:SpriteShader(NULL)
 {
 
 	if (rendererver == 1)

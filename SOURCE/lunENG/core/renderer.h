@@ -113,14 +113,14 @@ private:
 
 	unsigned int drawingMode;
 	unsigned int PrimitiveType;
+	
+	unsigned int shaderProc;
 
 	unsigned int numVertex;
-
-    unsigned int shaderProc;
     
-    int loc_inVertex;
-    int loc_inTextCoords;
+	int loc_inVertex;
+    	int loc_inTextCoords;
     
-    unsigned int VAO;
+    	unsigned int VAO;
     
 };

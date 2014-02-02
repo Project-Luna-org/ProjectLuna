@@ -88,5 +88,22 @@ class sprites
 
 	private:
 
+		
+		sprites& operator=(const sprites&) const;
+		sprites(const sprites&);	
+
 		shader* SpriteShader;
 };
+
+
+
+
+
+
+
+
+
+
+
+
+

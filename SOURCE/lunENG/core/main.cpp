@@ -40,6 +40,11 @@
  #include <gl/GL.h>
  #include <gl/GLU.h>
 #endif
+#ifdef OS_LIN
+ #include <GL/gl.h>
+ #include <GL/glu.h>
+#endif
+
 #include <string>
 #include <stdlib.h>
 #include <time.h>
@@ -88,6 +93,9 @@ int main(int argc, char** argv)
     
 	CreateLogFile();
 
+#ifdef OS_LIN
+	if (argc > 1) error("no specific parameter needed "+numstr(argc));
+#endif
 	srand((unsigned int) time(NULL));
 
 	GetEngineStartupConfig(absoluteExecutablePath);
@@ -192,7 +200,7 @@ int main(int argc, char** argv)
 			myTerrain->LoadHeightMap(testIMG);
 	
 
-			shader* terrainShader;
+			shader* terrainShader=NULL;
 			if (rendererver == 1)
 			 terrainShader = new shader(DATAfolder+"shader/2.1/through.vert", DATAfolder+"shader/2.1/through.frag");
 			if (rendererver == 2)
@@ -266,11 +274,12 @@ int main(int argc, char** argv)
 		{
 			switch(event.type) 
 			{
-				case SDL_MOUSEMOTION:
-				{
-					MouseX=event.motion.x;
-					MouseY=event.motion.y;
-				} break;
+//				case SDL_MOUSEMOTION:
+//				{
+//					MouseX=event.motion.x;
+//					MouseY=event.motion.y;
+//				} break;
+
 				case SDL_QUIT: { quit = true; } break;
 				case SDL_APP_TERMINATING: { quit = true; } break;
 				case SDL_WINDOWEVENT_CLOSE: { quit=true; } break;
@@ -303,6 +312,9 @@ int main(int argc, char** argv)
 			}
 		}
 		
+
+		SDL_GetMouseState( &MouseX, &MouseY );
+
 		curTimeStamp=SDL_GetTicks()-progEnterTime;
 
 		// Update

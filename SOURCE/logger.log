@@ -1,5 +1,4 @@
 [LOG]
-OpenGL renderer GeForce GTX 770/PCIe/SSE2
-OpenGL version 4.3.0
- - file ../DATA//models/sphere.obj has 9902Vertex and 19800Faces
+OpenGL renderer Gallium 0.4 on AMD REDWOOD
+OpenGL version 3.0 Mesa 10.0.2
 normal Exit

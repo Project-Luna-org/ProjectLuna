@@ -46,7 +46,10 @@
 
 
 /** use OS_WIN  to build for Windows */
-#define OS_WIN
+// #define OS_WIN
 
 /** use OS_OSX to build for MacOSX */
 // #define OS_OSX
+
+#define OS_LIN
+

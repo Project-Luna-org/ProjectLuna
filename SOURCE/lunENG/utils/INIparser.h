@@ -81,10 +81,15 @@ public:
 
 private:
 
+
+	INIparser (const INIparser&);
+	INIparser& operator=(const INIparser&) const;
+
 	struct Entry
 	{
 		string keyname;
 		string value;
+		Entry():keyname(""),value(""){}
 	};
 
 	struct Section
@@ -92,6 +97,10 @@ private:
 		string SectionName;
 		Entry* Entries;
 		int numEntries;
+		Section():SectionName(""), Entries(NULL), numEntries(0){}
+	private:
+		Section (const Section&);
+		Section& operator=(const Section&) const;
 	};
 
 

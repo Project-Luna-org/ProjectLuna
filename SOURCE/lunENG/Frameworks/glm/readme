@@ -1,0 +1,2 @@
+in /GTX/ simd_vec4.inl I changed line 22
+just ncomment it, and comment out the same function below to restore to default

@@ -1,0 +1,19 @@
+; lunENG configuration file
+
+[CORE]
+
+ver = 1.0
+
+; renderer = 1 -> OpenGL 2.1, renderer = 2 -> OpenGL 3.2, renderer = 3 -> OpenGL 4.3
+renderer = 2
+
+width = 1280
+height = 720
+fullscreen = false
+showMouse = true
+
+
+datapath = ../data/
+
+; onScreen | onWindowBar | off
+showFPS = onScreen

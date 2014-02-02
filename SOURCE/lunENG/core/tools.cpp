@@ -32,7 +32,7 @@
 #include <sstream>
 #include <stdlib.h>
 
-#include "Tools.h"
+#include "tools.h"
 
 using namespace std;
 
@@ -406,6 +406,9 @@ unsigned long strlength(string s)
 #endif
 #ifdef OS_WIN
     return s.length();
+#endif
+#ifdef OS_LIN
+    if (s.length()==0) return 0; else return s.length()-1;
 #endif
 }
 

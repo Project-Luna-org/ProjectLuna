@@ -185,6 +185,7 @@ INIparser::Entry INIparser::returnEntry(string s)
 }
 
 INIparser::INIparser(string filename)
+:Sections(NULL), numSections(0)
 {
 
 	ifstream INIfile;
@@ -209,6 +210,7 @@ INIparser::INIparser(string filename)
 	{
 		linecounter++;
 		getline(INIfile,s);
+
 		ss=LineType(s);
 
 		if (ss!="comment" && ss!="") 

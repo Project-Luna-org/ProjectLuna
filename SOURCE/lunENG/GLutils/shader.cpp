@@ -53,6 +53,7 @@ using namespace std;
 
 
 shader::shader(string filenameVertexShader, string filenameFragmentShader)
+:prog(0), vsSource(""), fsSource(""), vsID(0), fsID(0)
 {
 	ifstream inputVSfile(stringchar(filenameVertexShader));
 

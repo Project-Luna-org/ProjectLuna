@@ -213,6 +213,7 @@ void drawfont::glTextOut(int x, int y, string txt, Uint32 color)
 
 
 drawfont::drawfont(string fontfilename,int size)
+:curfont(NULL), texture(0), FontShader(NULL)
 {
 		
 	if (!(curfont = TTF_OpenFont(stringchar(fontfilename), size))) error("TTF_OpenFont "+fontfilename+" fails: " + (string) SDL_GetError());

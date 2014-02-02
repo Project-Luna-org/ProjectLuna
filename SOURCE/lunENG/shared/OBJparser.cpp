@@ -39,7 +39,7 @@
 #include <vector>
 
 
-#include "../core/Tools.h"
+#include "../core/tools.h"
 
 
 #include "OBJparser.h"
@@ -52,12 +52,10 @@ using namespace std;
 
 
 OBJparser::OBJparser(string filename)
+:Faces(NULL), numFaces(0), Vertices(NULL), numVertex(0), PositionBuffer(NULL), numPositions(0), TextureCoordBuffer(NULL), numTextureCoords(0),
+ NormalsBuffer(NULL), numNormals(0), scenename(""), vertexCount(0), textureCount(0), normalCount(0), faceCount(0), vertices(NULL), normals(NULL),
+ texcoords(NULL), faces(NULL), filesize(0), filepos(0), theFile(NULL)
 {
-	vertexCount = 0;
-	textureCount = 0;
-	normalCount = 0;
-	faceCount = 0;
-
 	LoadOBJfile(filename);
 }
 

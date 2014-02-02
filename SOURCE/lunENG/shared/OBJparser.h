@@ -181,6 +181,10 @@ public:
 
 private:
 
+	OBJparser(const OBJparser&);
+	OBJparser& operator=(const OBJparser&) const;
+
+
 	bool LoadOBJfile(string filename);
 
 	struct Vector3f
